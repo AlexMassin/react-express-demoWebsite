@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import 'semantic-ui-css/semantic.min.css';
 import {Header, Transition, Image, Icon} from 'semantic-ui-react';
 import './App.css';
-import { unstable_getThreadID } from 'schedule/cjs/schedule-tracing.development';
 
 class App extends Component {
   state={visible:false}
