@@ -11,10 +11,7 @@ import {
   Icon,
   Image,
   List,
-  Menu,
-  Responsive,
   Segment,
-  Sidebar,
 } from 'semantic-ui-react'
 
 /* eslint-disable react/no-multi-comp */
@@ -22,18 +19,8 @@ import {
  * such things.
  */
 
-const ResponsiveContainer = ({ children }) => (
-  <div>
-    <NavBar>{children}</NavBar>
-  </div>
-)
-
-ResponsiveContainer.propTypes = {
-  children: PropTypes.node,
-}
-
-const App = () => (
-  <ResponsiveContainer>
+const Styles = () => (
+  <NavBar>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
@@ -153,6 +140,6 @@ const App = () => (
         </Grid>
       </Container>
     </Segment>
-  </ResponsiveContainer>
+  </NavBar>
 )
-export default App
+export default Styles
