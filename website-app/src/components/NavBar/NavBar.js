@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import './NavBar.css';
-import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import {
   Container,
   Menu,

@@ -10,12 +10,12 @@ import {
   Divider,
   Grid,
   Header,
-  Image,
   List,
   Segment,
   Transition,
   Icon,
-  Label
+  Label,
+  Popup,
 } from 'semantic-ui-react'
 
 
@@ -39,7 +39,7 @@ const myDataSourceBar = {
             "value": "88"
         },
         {
-            "label": "No Framework",
+            "label": "N/A",
             "value": "65"
         },
         {
@@ -101,7 +101,7 @@ const myDataSourcePie = {
 const chartConfigsPie = {
     type: 'pie3d',
     width: '100%',
-    height: '80%',
+    height: '200%',
     dataFormat: 'json',
     dataSource: myDataSourcePie,
 };
@@ -147,40 +147,44 @@ render() {
     <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
-          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
              <ReactFC {...chartConfigsBar} />
+             <Popup trigger={<Label style={{float: 'left'}} color='violet' pointing='above' size='tiny'>Citation</Label>} content={"Thinkwik. “Why ReactJS Is Gaining so Much Popularity These Days.” Medium.com, Medium, 6 Dec. 2017, medium.com/@thinkwik/why-reactjs-is-gaining-so-much-popularity-these-days-c3aa686ec0b3."} />
           </Grid.Column>
-          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-          <ReactFC {...chartConfigsPie} />
-          </Grid.Column>
+          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Header as='h3' style={{ fontSize: '3em' }}>
+            Who uses ReactJS?
+          </Header>
+          <p style={{ fontSize: '1.33em' }}>
+          Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance.
+          </p>
+         </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
 
-    <Segment style={{ padding: '2em 0em' }} vertical>
-      <Container text>
-        <Divider
-          as='h4'
-          className='header'
-          horizontal
-          style={{ margin: '3em 0em', textTransform: 'uppercase' }}
-        >
-          <a href='#'>Case Studies</a>
-        </Divider>
-        <Header as='h3' style={{ fontSize: '2em' }}>
-          Did We Tell You About Our Bananas?
-        </Header>
-        <p style={{ fontSize: '1.33em' }}>
+    <Segment style={{ padding: '0em' }} vertical>
+      <Grid celled='internally' columns='equal' stackable>
+        <Grid.Row textAlign='center'>
+          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Header as='h3' style={{ fontSize: '3em' }}>
+            Who uses ReactJS?
+          </Header>
+          <p style={{ fontSize: '1.33em' }}>
           Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
           it's really true. It took years of gene splicing and combinatory DNA research, but our
           bananas can really dance.
-        </p>
-        <Button as='a' size='large'>
-          I'm Still Quite Interested
-        </Button>
-      </Container>
-    </Segment>
+          </p>
+          </Grid.Column>
+          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+                  <ReactFC {...chartConfigsPie} />
 
+         </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
 
 
 
