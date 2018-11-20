@@ -63,8 +63,8 @@ const myDataSourceBar = {
 
 const chartConfigsBar = {
       type: 'column2d',
-      width: 600,
-      height: 400,
+      width: '100%',
+      height: '200%',
       dataFormat: 'json',
       dataSource: myDataSourceBar,
 };
