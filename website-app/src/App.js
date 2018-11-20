@@ -1,6 +1,7 @@
 import 'semantic-ui-css/semantic.min.css';
 import NavBar from './components/NavBar/NavBar';
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Routes from './router'
 import {
   Button,
   Container,

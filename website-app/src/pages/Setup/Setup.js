@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import 'semantic-ui-css/semantic.min.css';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from '../../components/NavBar/NavBar';
 import React, { Component } from 'react'
 import {
   Button,
@@ -20,7 +20,7 @@ import {
  */
 
 const Setup = () => (
-  <NavBar>
+  <div>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
@@ -140,6 +140,6 @@ const Setup = () => (
         </Grid>
       </Container>
     </Segment>
-  </NavBar>
+  </div>
 )
 export default Setup

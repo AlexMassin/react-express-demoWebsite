@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types'
 import 'semantic-ui-css/semantic.min.css';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from '../../components/NavBar/NavBar';
 import React, { Component } from 'react'
 import {
   Button,
@@ -8,13 +7,9 @@ import {
   Divider,
   Grid,
   Header,
-  Icon,
   Image,
   List,
-  Menu,
-  Responsive,
   Segment,
-  Sidebar,
 } from 'semantic-ui-react'
 
 /* eslint-disable react/no-multi-comp */
@@ -22,18 +17,8 @@ import {
  * such things.
  */
 
-const ResponsiveContainer = ({ children }) => (
+const Demonstration = () => (
   <div>
-    <NavBar>{children}</NavBar>
-  </div>
-)
-
-ResponsiveContainer.propTypes = {
-  children: PropTypes.node,
-}
-
-const App = () => (
-  <ResponsiveContainer>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
@@ -153,6 +138,6 @@ const App = () => (
         </Grid>
       </Container>
     </Segment>
-  </ResponsiveContainer>
+  </div>
 )
-export default App
+export default Demonstration;

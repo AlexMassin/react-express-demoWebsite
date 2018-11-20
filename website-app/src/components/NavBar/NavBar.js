@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import './NavBar.css';
+import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
   Container,
   Menu,
@@ -8,11 +10,15 @@ import {
 } from 'semantic-ui-react'
 
 class NavBar extends Component {
-  state = {}
 
+
+  handleItemClick = (e, { name }) => {
+    window.location.href = '/' + name;
+
+  }
   render() {
-    const { children } = this.props
-
+    const { children } = this.props;
+    
     return (
       <div>
         <Menu
@@ -21,14 +27,24 @@ class NavBar extends Component {
           color='violet'
           secondary
           size='large'
+          pointing
         >
           <Container>
-            <Menu.Item as='a' active>Home</Menu.Item>
-            <Menu.Item as='a'>Setup</Menu.Item>
-            <Menu.Item as='a'>Styles</Menu.Item>
-            <Menu.Item as='a'>Demonstration</Menu.Item>
-            <Menu.Item as='a'>Conclusion</Menu.Item>
-            <Menu.Item as='a'>About Us</Menu.Item>
+            <Menu.Item  name='home' 
+                        active={window.location.pathname === '/home'} 
+                        onClick={this.handleItemClick} />
+             <Menu.Item  name='setup' 
+                        active={window.location.pathname === '/setup'} 
+                        onClick={this.handleItemClick} />
+              <Menu.Item  name='styles' 
+                        active={window.location.pathname === '/styles'} 
+                        onClick={this.handleItemClick} />
+              <Menu.Item  name='demonstration' 
+                        active={window.location.pathname === '/demonstration'} 
+                        onClick={this.handleItemClick} />
+              <Menu.Item  name='team' 
+                        active={window.location.pathname === '/team'} 
+                        onClick={this.handleItemClick} />
             <Menu.Item position='right'>
               <Icon name='react' loading size='large' />
             </Menu.Item>
