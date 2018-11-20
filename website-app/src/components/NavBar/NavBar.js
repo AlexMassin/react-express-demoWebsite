@@ -46,7 +46,7 @@ class NavBar extends Component {
                         active={window.location.pathname === '/team'} 
                         onClick={this.handleItemClick} />
             <Menu.Item position='right'>
-              <Icon name='react' loading size='large' />
+              <Icon name='react' size='large' />
             </Menu.Item>
           </Container>
         </Menu>
