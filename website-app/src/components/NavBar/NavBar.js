@@ -31,7 +31,7 @@ class NavBar extends Component {
         >
           <Container>
             <Menu.Item  name='home' 
-                        active={window.location.pathname === '/home'} 
+                        active={window.location.pathname === '/home' || window.location.pathname === '/'} 
                         onClick={this.handleItemClick} />
              <Menu.Item  name='setup' 
                         active={window.location.pathname === '/setup'} 

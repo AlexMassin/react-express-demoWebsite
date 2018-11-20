@@ -8,7 +8,6 @@ import NavBar from './components/NavBar/NavBar';
 
 ReactDOM.render(<NavBar>
     <Routes />
-    <App />
     </NavBar>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
