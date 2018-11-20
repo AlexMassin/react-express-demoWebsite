@@ -1,7 +1,6 @@
 import 'semantic-ui-css/semantic.min.css';
-import NavBar from './components/NavBar/NavBar';
-import React, { Component } from 'react';
-import Routes from './router'
+import NavBar from '../../components/NavBar/NavBar';
+import React, { Component } from 'react'
 import {
   Button,
   Container,
@@ -18,8 +17,8 @@ import {
  * such things.
  */
 
-const App = () => (
-  <NavBar>
+const Styles = () => (
+  <div>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
@@ -139,6 +138,6 @@ const App = () => (
         </Grid>
       </Container>
     </Segment>
-  </NavBar>
+  </div>
 )
-export default App
+export default Styles
