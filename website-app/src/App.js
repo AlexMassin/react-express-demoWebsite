@@ -1,7 +1,9 @@
 import 'semantic-ui-css/semantic.min.css';
-import NavBar from './components/NavBar/NavBar';
 import React, { Component } from 'react';
-import Routes from './router'
+import FusionCharts from 'fusioncharts';
+import Charts from 'fusioncharts/fusioncharts.charts';
+import ReactFC from 'react-fusioncharts';
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 import {
   Button,
   Container,
@@ -11,79 +13,152 @@ import {
   Image,
   List,
   Segment,
+  Transition,
+  Icon,
+  Label
 } from 'semantic-ui-react'
 
-/* eslint-disable react/no-multi-comp */
-/* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
- * such things.
- */
 
-const App = () => (
-  <NavBar>
-    <Segment style={{ padding: '8em 0em' }} vertical>
+ReactFC.fcRoot(FusionCharts, Charts, FusionTheme);
+
+const myDataSourceBar = {
+    "chart": {
+        "caption": "Percentage of Users Who Would Use a Framework Again",
+        "yAxisName": "Users (%)",
+        "xAxisName": "Frameworks",
+        "numberSuffix": "%",
+        "theme": "fusion"
+    },
+    "data": [
+        {
+            "label": "React",
+            "value": "92"
+        },
+        {
+            "label": "Vue",
+            "value": "88"
+        },
+        {
+            "label": "No Framework",
+            "value": "65"
+        },
+        {
+            "label": "Angular 2",
+            "value": "64"
+        },
+        {
+            "label": "Ember",
+            "value": "47"
+        },
+        {
+            "label": "Angular",
+            "value": "46"
+        },
+        {
+            "label": "Backbone",
+            "value": "31"
+        }
+    ]
+};
+
+const chartConfigsBar = {
+      type: 'column2d',
+      width: 600,
+      height: 400,
+      dataFormat: 'json',
+      dataSource: myDataSourceBar,
+};
+
+const myDataSourcePie = {
+  "chart": {
+    "caption": "Development Primary Focus - NodeJS",
+    "showvalues": "1",
+    "showpercentintooltip": "1",
+    "numbersuffix": "%",
+    "enablemultislicing": "1",
+    "theme": "fusion"
+  },
+  "data": [
+      {
+          "label": "Back-End Development",
+          "value": "39"
+      },
+      {
+          "label": "Full Stack",
+          "value": "36"
+      },
+      {
+          "label": "Front-End Development",
+          "value": "16"
+      },
+      {
+          "label": "Other",
+          "value": "9"
+      }
+  ]
+};
+
+const chartConfigsPie = {
+    type: 'pie3d',
+    width: '100%',
+    height: '80%',
+    dataFormat: 'json',
+    dataSource: myDataSourcePie,
+};
+
+
+class App extends Component{
+
+  state={visible:false}
+
+  toggleVisibility = () => this.setState({ visible: !this.state.visible })
+
+
+  componentDidMount = () => {
+    setTimeout(
+      this.setState({visible:true}),
+      3000
+    )
+}
+
+render() {
+  const {visible} = this.state
+  return (
+  <div>
+    <Segment inverted style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
-          <Grid.Column width={8}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              We Help Companies and Companions
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-              Let us delight your customers and empower your needs... through pure data analytics.
-            </p>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              We Make Bananas That Can Dance
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-              bioengineered.
-            </p>
-          </Grid.Column>
-          <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
+          <Grid.Column>
+          <Transition visible={visible} animation='fade down' duration={8000}>
+              <Header icon={<Icon name='react' />} style={{fontSize: '72px'}} as='h1' inverted color='blue' content={'What is ReactJS?'} />
+          </Transition>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column textAlign='center'>
-            <Button size='huge'>Check Them Out</Button>
+          <Grid.Column>
+          <Transition visible={visible} animation='fade up' duration={8000}>
+              <Header style={{fontSize: '72px', float: 'right', margin: '24px'}} as='h1' inverted color='green' icon={<Icon name='node js' />} content={'What is NodeJS?'} />
+          </Transition>
           </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
+
     <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              "What a Company"
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+             <ReactFC {...chartConfigsBar} />
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              "I shouldn't have gone with their competitor."
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              <Image avatar src='/images/avatar/large/nan.jpg' />
-              <b>Nan</b> Chief Fun Officer Acme Toys
-            </p>
+          <ReactFC {...chartConfigsPie} />
           </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
-    <Segment style={{ padding: '8em 0em' }} vertical>
+
+    <Segment style={{ padding: '2em 0em' }} vertical>
       <Container text>
-        <Header as='h3' style={{ fontSize: '2em' }}>
-          Breaking The Grid, Grabs Your Attention
-        </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          Instead of focusing on content creation and hard work, we have learned how to master the
-          art of doing nothing by providing massive amounts of whitespace and generic content that
-          can seem massive, monolithic and worth your attention.
-        </p>
-        <Button as='a' size='large'>
-          Read More
-        </Button>
         <Divider
           as='h4'
           className='header'
@@ -105,6 +180,10 @@ const App = () => (
         </Button>
       </Container>
     </Segment>
+
+
+
+
     <Segment inverted vertical style={{ padding: '5em 0em' }}>
       <Container>
         <Grid divided inverted stackable>
@@ -139,6 +218,8 @@ const App = () => (
         </Grid>
       </Container>
     </Segment>
-  </NavBar>
-)
+  </div>
+  );
+  }
+}
 export default App

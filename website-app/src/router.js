@@ -12,7 +12,7 @@ import NoPage from './pages/NoPage/NoPage.js';
 const Routes = () => (
     <BrowserRouter>
     <Switch>
-         <Route exact path='/' component={App} />
+        <Route exact path='/' component={App} />
         <Route path='/home' component={App} />
         <Route path='/team' component={AboutUs} />
         <Route path='/conclusion' component={Conclusion} />
