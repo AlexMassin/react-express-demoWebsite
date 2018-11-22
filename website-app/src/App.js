@@ -6,6 +6,7 @@ import ReactFC from 'react-fusioncharts';
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 import {
   Button,
+  Table,
   Container,
   Divider,
   Grid,
@@ -16,6 +17,7 @@ import {
   Icon,
   Label,
   Popup,
+  GridColumn,
 } from 'semantic-ui-react'
 
 
@@ -64,7 +66,7 @@ const myDataSourceBar = {
 const chartConfigsBar = {
       type: 'column2d',
       width: '100%',
-      height: '200%',
+      height: '100%',
       dataFormat: 'json',
       dataSource: myDataSourceBar,
 };
@@ -101,7 +103,7 @@ const myDataSourcePie = {
 const chartConfigsPie = {
     type: 'pie3d',
     width: '100%',
-    height: '200%',
+    height: '100%',
     dataFormat: 'json',
     dataSource: myDataSourcePie,
 };
@@ -114,7 +116,7 @@ class App extends Component{
   toggleVisibility = () => this.setState({ visible: !this.state.visible })
 
 
-  componentDidMount = () => {
+componentDidMount = () => {
     setTimeout(
       this.setState({visible:true}),
       3000
@@ -145,20 +147,41 @@ render() {
     </Segment>
 
     <Segment style={{ padding: '0em' }} vertical>
+    <Divider
+          as='h2'
+          className='header'
+          horizontal
+          style={{ margin: '1em 2em', textTransform: 'uppercase', textAlign: 'center' }}
+        >
+          <Icon name='users' circular color='teal'/>
+          Popularity
+        </Divider>
       <Grid celled='internally' columns='equal' stackable>
-        <Grid.Row textAlign='center'>
-          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Grid.Row textAlign='center'>
+          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '1em' }}>
              <ReactFC {...chartConfigsBar} />
-             <Popup trigger={<Label style={{float: 'left'}} color='violet' pointing='above' size='tiny'>Citation</Label>} content={"Thinkwik. “Why ReactJS Is Gaining so Much Popularity These Days.” Medium.com, Medium, 6 Dec. 2017, medium.com/@thinkwik/why-reactjs-is-gaining-so-much-popularity-these-days-c3aa686ec0b3."} />
+             <Popup trigger={<Label style={{float: 'left'}} color='violet'  size='tiny'>Citation</Label>} content={"Thinkwik. “Why ReactJS Is Gaining so Much Popularity These Days.” Medium.com, Medium, 6 Dec. 2017, medium.com/@thinkwik/why-reactjs-is-gaining-so-much-popularity-these-days-c3aa686ec0b3."} />
           </Grid.Column>
-          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
-          <Header as='h3' style={{ fontSize: '3em' }}>
+          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+          <Header as='h3' style={{ fontSize: '4em' }}>
             Who uses ReactJS?
           </Header>
           <p style={{ fontSize: '1.33em' }}>
           Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
           it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance.
+          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance. 
           </p>
          </Grid.Column>
         </Grid.Row>
@@ -168,24 +191,165 @@ render() {
     <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
-          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
-          <Header as='h3' style={{ fontSize: '3em' }}>
-            Who uses ReactJS?
+          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+          <Header as='h3' style={{ fontSize: '4em' }}>
+            Who uses NodeJS?
           </Header>
           <p style={{ fontSize: '1.33em' }}>
           Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+          it's really true. It took years of gene splicing and combinatory DNA research, but our
+          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
           it's really true. It took years of gene splicing and combinatory DNA research, but our
           bananas can really dance.
           </p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
                   <ReactFC {...chartConfigsPie} />
-
+                  <Popup trigger={<Label style={{float: 'right'}} color='violet' size='tiny'>Citation</Label>} content={"Hámori, F. (2017, July 26th). This is what Node.js is used for in 2017 - Survey Results. Retrieved from https://blog.risingstack.com/what-is-node-js-used-for-2017-survey/"} />
          </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
 
+
+    <Header as='h1' style = {{margin: '3em 3em', marginBottom: '-1em'}} icon textAlign='center'>
+      <Icon name='code' color='green' circular />
+      <Header.Content>Strengths & Weaknesses</Header.Content>
+    </Header>
+
+    <Grid stackable columns='equal'>
+      <Grid.Row textAlign='center'>
+        <Grid.Column>
+        <Header as='h2' style = {{margin: '1em'}} icon textAlign='center'>
+            <Icon name='react' color='teal' circular />
+            <Header.Content>ReactJS</Header.Content>
+        </Header>
+        </Grid.Column>
+        <Grid.Column>
+        <Header as='h2' style = {{margin: '1em'}} icon textAlign='center'>
+          <Icon name='node js' color='green' circular />
+          <Header.Content>NodeJS</Header.Content>
+        </Header>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row textAlign='center'>
+        <Grid.Column>
+            <center>
+            <Table celled fixed style={{width: '75%', marginBottom: '5em'}}>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Name</Table.HeaderCell>
+                <Table.HeaderCell>Status</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell>Name</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+              </Table.Row>
+              <Table.Row positive>
+                <Table.Cell>Jimmy</Table.Cell>
+                <Table.Cell>
+                  <Icon name='checkmark' />
+                  Approved
+                </Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+                
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+                
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+                
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+                
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+                
+              </Table.Row>
+              <Table.Row negative>
+                <Table.Cell>Jill</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
+          </center>
+        </Grid.Column>
+        <Grid.Column>
+        <center>
+            <Table celled fixed style={{width: '75%', marginBottom: '5em'}}>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Name</Table.HeaderCell>
+                <Table.HeaderCell>Status</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell>Name</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+              </Table.Row>
+              <Table.Row positive>
+                <Table.Cell>Jimmy</Table.Cell>
+                <Table.Cell>
+                  <Icon name='checkmark' />
+                  Approved
+                </Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+                
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+                
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+                
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+                
+              </Table.Row>
+              <Table.Row negative>
+                <Table.Cell>Jill</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
+          </center>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
 
 
     <Segment inverted vertical style={{ padding: '5em 0em' }}>
