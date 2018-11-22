@@ -83,10 +83,10 @@ const Setup = () => (
         <p style={{ fontSize: '1.33em' }}>
           Before we start creating a VPS, we need to make a project. On the left, you should see a sidebar with an option to create a new project.
         </p>
-        <Grid.Column>
+        <div>
           <Image style={{ marginLeft: 'auto', marginRight: 'auto', display: 'inline', width: '15em' }} rounded size='large' src={sidebar_img} />
           <Image style={{ marginLeft: 'auto', marginRight: 'auto', display: 'inline' }} rounded size='large' src={project_creation} />
-        </Grid.Column>
+        </div>
         <br />
         <p style={{ fontSize: '1.33em' }}>
           Give your project a name, a relevant description, and whatever feedback that applies to you. When they ask for resources, simply skip
@@ -100,29 +100,29 @@ const Setup = () => (
           Digital Ocean refers to each VPS as a droplet. You should be presented with the following dashboard, ready to create a new VPS.
           Click the <strong>Get Started With a Droplet</strong> button to customize the server as we need.
         </p>
-        <Grid.Column>
+        <div>
           <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em'}} rounded size='large' src={droplet_dash} />
-        </Grid.Column>
+        </div>
         <p style={{ fontSize: '1.33em' }}>
           <ol>
-            <li>Navigate to the <strong>One-click apps</strong> tab and select <strong>NodeJS 8.10.0 on 18.04</strong>.</li>
-            <Grid.Column>
+            <li style={{padding: '16px'}}>Navigate to the <strong>One-click apps</strong> tab and select <strong>NodeJS 8.10.0 on 18.04</strong>.</li>
+            <div>
               <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em'}} bordered rounded size='large' src={server_image} />
-            </Grid.Column>
-            <li>Select at least 2 GB RAM. We went with the $10/mo option.</li>
-            <Grid.Column>
+            </div>
+            <li style={{padding: '16px'}}>Select at least 2 GB RAM. We went with the $10/mo option.</li>
+            <div>
               <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em'}} bordered rounded size='large' src={hardware} />
-            </Grid.Column>
-            <li>Select the nearest datacenter. For us, this was Toronto.</li>
-            <Grid.Column>
+            </div>
+            <li style={{padding: '16px'}}>Select the nearest datacenter. For us, this was Toronto.</li>
+            <div>
               <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em'}} bordered rounded size='large' src={datacenter} />
-            </Grid.Column>
-            <li>Can optionally change hostname. Default is descriptive enough.</li>
-            <li>Press the large, green <strong>Create</strong> button to finish.</li>
-            <li>After a few seconds, the server will be created, and run with a 24 hour uptime. We are ready to SSH.</li>
-            <Grid.Column>
+            </div>
+            <li style={{padding: '16px'}}>Can optionally change hostname. Default is descriptive enough.</li>
+            <li style={{padding: '16px'}}>Press the large, green <strong>Create</strong> button to finish.</li>
+            <li style={{padding: '16px'}}>After a few seconds, the server will be created, and run with a 24 hour uptime. We are ready to SSH.</li>
+            <div>
               <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em'}} bordered rounded size='large' src={droplet} />
-            </Grid.Column>
+            </div>
           </ol>
         </p>
         <br />
@@ -143,9 +143,9 @@ const Setup = () => (
         </Header>
         <p>
           You will be emailed your password for the server.
-          <Grid.Column>
+          <div>
             <Image style={{ width: '15em'}} bordered rounded size='large' src={creds} />
-          </Grid.Column>
+          </div>
           You need to execute
           <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
   ssh root@my_ip_address
