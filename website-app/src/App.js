@@ -145,20 +145,28 @@ render() {
     </Segment>
 
     <Segment style={{ padding: '0em' }} vertical>
+    <Divider
+          as='h1'
+          className='header'
+          horizontal
+          style={{ margin: '1em 2em', textTransform: 'uppercase', textAlign: 'center' }}
+        >
+          Information
+        </Divider>
       <Grid celled='internally' columns='equal' stackable>
-        <Grid.Row textAlign='center'>
-          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Grid.Row textAlign='center'>
+          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '1em' }}>
              <ReactFC {...chartConfigsBar} />
              <Popup trigger={<Label style={{float: 'left'}} color='violet' pointing='above' size='tiny'>Citation</Label>} content={"Thinkwik. “Why ReactJS Is Gaining so Much Popularity These Days.” Medium.com, Medium, 6 Dec. 2017, medium.com/@thinkwik/why-reactjs-is-gaining-so-much-popularity-these-days-c3aa686ec0b3."} />
           </Grid.Column>
-          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Grid.Column style={{paddingTop: '1em' }}>
           <Header as='h3' style={{ fontSize: '3em' }}>
             Who uses ReactJS?
           </Header>
           <p style={{ fontSize: '1.33em' }}>
           Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
           it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance.
+          bananas can really dance. 
           </p>
          </Grid.Column>
         </Grid.Row>
@@ -186,6 +194,11 @@ render() {
       </Grid>
     </Segment>
 
+    <Divider
+          horizontal
+          style={{ margin: '3em 3em', textTransform: 'uppercase', textAlign: 'center' }}
+        >
+        </Divider>
 
 
     <Segment inverted vertical style={{ padding: '5em 0em' }}>

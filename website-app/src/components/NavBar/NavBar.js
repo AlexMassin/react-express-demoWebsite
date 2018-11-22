@@ -40,6 +40,9 @@ class NavBar extends Component {
               <Menu.Item  name='demonstration' 
                         active={window.location.pathname === '/demonstration'} 
                         onClick={this.handleItemClick} />
+              <Menu.Item  name='conclusion' 
+                        active={window.location.pathname === '/conclusion'} 
+                        onClick={this.handleItemClick} />
               <Menu.Item  name='team' 
                         active={window.location.pathname === '/team'} 
                         onClick={this.handleItemClick} />
