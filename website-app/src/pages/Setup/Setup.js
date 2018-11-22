@@ -29,7 +29,7 @@ import {
 
 const Setup = () => (
   <div>
-    <Segment inverted style={{ padding: '2em 0em' }} vertical>
+    <Segment inverted style={{ padding: '5em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
           <Grid.Column width={8}>
@@ -49,7 +49,7 @@ const Setup = () => (
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign='center'>
-          <Button style={{width: '280px'}} size='massive' animated='fade' onClick={() => {window.open("https://digitalocean.com/", "_blank");}}>
+          <Button color='blue' style={{width: '280px'}} size='massive' animated='fade' onClick={() => {window.open("https://digitalocean.com/", "_blank");}}>
             <Button.Content visible>Learn More</Button.Content>
             <Button.Content hidden>Visit Digital Ocean</Button.Content>
           </Button>
