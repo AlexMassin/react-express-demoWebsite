@@ -29,10 +29,10 @@ import {
 
 const Setup = () => (
   <div>
-    <Segment inverted style={{ padding: '2em 0em' }} vertical>
+    <Segment inverted style={{ padding: '5em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
-          <Grid.Column width={8}>
+          <Grid.Column width={ 8 }>
             <Header inverted as='h3' style={{ fontSize: '2em' }}>
               Setting Up A Back-end Server
             </Header>
@@ -43,13 +43,13 @@ const Setup = () => (
               offers many different preset servers that cater to specific needs.
             </p>
           </Grid.Column>
-          <Grid.Column floated='right' width={6}>
-            <Image rounded size='large' src={backend_img} />
+          <Grid.Column floated='right' width={ 6 }>
+            <Image rounded size='large' src={ backend_img } />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign='center'>
-          <Button style={{width: '280px'}} size='massive' animated='fade' onClick={() => {window.open("https://digitalocean.com/", "_blank");}}>
+          <Button color='blue' style={{ width: '280px' }} size='massive' animated='fade' onClick={() => { window.open("https://digitalocean.com/", "_blank"); }}>
             <Button.Content visible>Learn More</Button.Content>
             <Button.Content hidden>Visit Digital Ocean</Button.Content>
           </Button>
@@ -58,14 +58,13 @@ const Setup = () => (
       </Grid>
     </Segment>
     <Divider
-          as='h4'
+          as='h3'
           className='header'
           horizontal
           style={{ margin: '3em 0em', textTransform: 'uppercase' }}
         >
         Setting Up Digital Ocean
     </Divider>
-    <Segment style={{ padding: '2em 0em' }} vertical>
       <Container text>
         <Header as='h3' style={{ fontSize: '2em' }}>
           Create a Digital Ocean Account
@@ -84,8 +83,8 @@ const Setup = () => (
           Before we start creating a VPS, we need to make a project. On the left, you should see a sidebar with an option to create a new project.
         </p>
         <div>
-          <Image style={{ marginLeft: 'auto', marginRight: 'auto', display: 'inline', width: '15em' }} rounded size='large' src={sidebar_img} />
-          <Image style={{ marginLeft: 'auto', marginRight: 'auto', display: 'inline' }} rounded size='large' src={project_creation} />
+          <Image style={{ marginLeft: 'auto', marginRight: 'auto', display: 'inline', width: '15em' }} rounded size='large' src={ sidebar_img } />
+          <Image style={{ marginLeft: 'auto', marginRight: 'auto', display: 'inline' }} rounded size='large' src={ project_creation } />
         </div>
         <br />
         <p style={{ fontSize: '1.33em' }}>
@@ -101,38 +100,37 @@ const Setup = () => (
           Click the <strong>Get Started With a Droplet</strong> button to customize the server as we need.
         </p>
         <div>
-          <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em'}} rounded size='large' src={droplet_dash} />
+          <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em' }} rounded size='large' src={ droplet_dash } />
         </div>
         <p style={{ fontSize: '1.33em' }}>
           <ol>
-            <li style={{padding: '16px'}}>Navigate to the <strong>One-click apps</strong> tab and select <strong>NodeJS 8.10.0 on 18.04</strong>.</li>
+            <li style={{ padding: '16px' }}>Navigate to the <strong>One-click apps</strong> tab and select <strong>NodeJS 8.10.0 on 18.04</strong>.</li>
             <div>
-              <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em'}} bordered rounded size='large' src={server_image} />
+              <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em' }} bordered rounded size='large' src={ server_image } />
             </div>
-            <li style={{padding: '16px'}}>Select at least 2 GB RAM. We went with the $10/mo option.</li>
+            <li style={{ padding: '16px' }}>Select a CPU with at least 2 GB of RAM. We went with the $10/mo option.</li>
             <div>
-              <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em'}} bordered rounded size='large' src={hardware} />
+              <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em' }} bordered rounded size='large' src={ hardware } />
             </div>
-            <li style={{padding: '16px'}}>Select the nearest datacenter. For us, this was Toronto.</li>
+            <li style={{ padding: '16px' }}>Select the nearest datacenter. For us, this was Toronto.</li>
             <div>
-              <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em'}} bordered rounded size='large' src={datacenter} />
+              <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em' }} bordered rounded size='large' src={ datacenter } />
             </div>
-            <li style={{padding: '16px'}}>Can optionally change hostname. Default is descriptive enough.</li>
-            <li style={{padding: '16px'}}>Press the large, green <strong>Create</strong> button to finish.</li>
-            <li style={{padding: '16px'}}>After a few seconds, the server will be created, and run with a 24 hour uptime. We are ready to SSH.</li>
+            <li style={{ padding: '16px' }}>We can optionally change hostname but, default is descriptive enough.</li>
+            <li style={{ padding: '16px' }}>Press the large, green <strong>Create</strong> button to finish.</li>
+            <li style={{ padding: '16px' }}>After a few seconds, the server will be created, and run with a 24 hour uptime. We are ready to SSH.</li>
             <div>
-              <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em'}} bordered rounded size='large' src={droplet} />
+              <Image style={{ marginLeft: 'auto', marginRight: 'auto', width: '50em' }} bordered rounded size='large' src={ droplet } />
             </div>
           </ol>
         </p>
         <br />
       </Container>
-    </Segment>
     <Divider
-          as='h4'
+          as='h3'
           className='header'
           horizontal
-          style={{ margin: '3em 0em', textTransform: 'uppercase' }}
+          style={{ margin: '2em 0em', textTransform: 'uppercase' }}
         >
         Setting Up Server Infrastructure
     </Divider>
@@ -143,12 +141,12 @@ const Setup = () => (
         </Header>
         <p>
           You will be emailed your password for the server.
-          <div>
-            <Image style={{ width: '15em'}} bordered rounded size='large' src={creds} />
+          <div style={{ padding: '16px' }}>
+            <Image style={{ width: '20em' }} bordered rounded size='large' src={ creds } />
           </div>
           You need to execute
           <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
-  ssh root@my_ip_address
+  ssh root@Server_IP_Address
           `}</pre>
           Paste in your password, and you will be prompted to change it.
         </p>
@@ -158,7 +156,7 @@ const Setup = () => (
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
           <Grid.Column width={8}>
-            <Header inverted as='h3' style={{ fontSize: '2em' }}>
+            <Header inverted as='h3' style={{ fontSize: '2em', marginTop: '-5em' }}>
               Setting Up A Front-end Web Application
             </Header>
             <p style={{ fontSize: '1.33em' }}>
@@ -166,13 +164,14 @@ const Setup = () => (
               <br />More content here...
             </p>
           </Grid.Column>
-          <Grid.Column floated='right' width={6}>
-            <Header icon={ <Icon name='react' /> } style={{ fontSize: '144px', textAlign: 'right', paddingTop: '20px' }} as='h1' inverted color='blue'/>
+          <Grid.Column floated='right' width={ 6 }>
+            <Header icon={ <Icon name='react' /> } style={{ fontSize: '144px', textAlign: 'left', paddingTop: '20px', margin: '8px' }} as='h1' inverted color='blue'/>
+            <Header icon={ <Icon name='node js' /> } style={{ fontSize: '144px', textAlign: 'right' }} as='h1' inverted color='green'/>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign='center'>
-          <Button style={{width: '280px'}} size='massive' animated='fade' onClick={() => {window.open("https://react.semantic-ui.com/", "_blank");}}>
+          <Button color='blue' style={{ width: '280px' }} size='massive' animated='fade' onClick={ () => {window.open("https://react.semantic-ui.com/", "_blank"); }}>
             <Button.Content visible>Learn More</Button.Content>
             <Button.Content hidden>Visit Semantic UI React</Button.Content>
           </Button>
@@ -181,7 +180,7 @@ const Setup = () => (
       </Grid>
     </Segment>
     <Divider
-          as='h4'
+          as='h3'
           className='header'
           horizontal
           style={{ margin: '3em 0em', textTransform: 'uppercase' }}
