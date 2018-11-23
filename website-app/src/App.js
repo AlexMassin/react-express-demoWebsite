@@ -162,26 +162,23 @@ render() {
              <ReactFC {...chartConfigsBar} />
              <Popup trigger={<Label style={{float: 'left'}} color='violet'  size='tiny'>Citation</Label>} content={"Thinkwik. “Why ReactJS Is Gaining so Much Popularity These Days.” Medium.com, Medium, 6 Dec. 2017, medium.com/@thinkwik/why-reactjs-is-gaining-so-much-popularity-these-days-c3aa686ec0b3."} />
           </Grid.Column>
-          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-          <Header as='h3' style={{ fontSize: '4em' }}>
-            Who uses ReactJS?
+          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Header as='h4' style={{ fontSize: '2em' }}>
+            What is ReactJS?
           </Header>
-          <p style={{ fontSize: '1.33em' }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. 
+          <p style={{ fontSize: '1.1em' }}>
+           ReactJS is an open source JavaScript Library that was designed by Facebook to provide the best DOM rendering performance for web apps with minimal coding and files required.          </p>
+          <Header as='h4' style={{ fontSize: '2em' }}>
+            Why is it so popular?
+          </Header>
+          <p style={{ fontSize: '1.1em' }}>
+            ReactJS allows for pieces of code to be broken into components for reusability using JSX which allows developers to create a more efficient and simplified web app.
+            ReactJS implements JSX which uses HTML syntax to construct React Components in a single file, rather than having nested HTML documents using JS syntax.
+            If you wish to learn more about JSX, <a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank">click here. </a> 
+            <br />
+            <br />
+            Within an article by Medium, it states, "Today, ReactJS has become highly popular because of its extra simplicity and flexibility. Many people are even referring to it as the future of web development. It is estimated that more than 1,300 developers and over 94,000 sites utilize ReactJS" (Thinkwik).
+            Furthermore, ReactJS has gained credibility by being the #1 Framework used by Facebook, Airbnb, and Instagram within their web apps.
           </p>
          </Grid.Column>
         </Grid.Row>
