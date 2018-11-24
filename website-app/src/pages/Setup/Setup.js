@@ -134,8 +134,7 @@ const Setup = () => (
         >
         Setting Up Server Infrastructure
     </Divider>
-    <Segment style={{ padding: '2em 0em' }} vertical>
-      <Container text>
+      <Container text style={{ margin: '2em 0em 4em 0em' }}>
         <Header as='h3' style={{ fontSize: '2em' }}>
           SSH to your VPS
         </Header>
@@ -151,12 +150,11 @@ const Setup = () => (
           Paste in your password, and you will be prompted to change it.
         </p>
       </Container>
-    </Segment>
-    <Segment inverted style={{ padding: '2em 0em' }} vertical>
+      <Segment inverted style={{ padding: '5em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
-          <Grid.Column width={8}>
-            <Header inverted as='h3' style={{ fontSize: '2em', marginTop: '-5em' }}>
+          <Grid.Column width={ 8 }  style={{ marginTop: '-8em' }}>
+            <Header inverted as='h3' style={{ fontSize: '2em' }}>
               Setting Up A Front-end Web Application
             </Header>
             <p style={{ fontSize: '1.33em' }}>
@@ -164,14 +162,14 @@ const Setup = () => (
               <br />More content here...
             </p>
           </Grid.Column>
-          <Grid.Column floated='right' width={ 6 }>
-            <Header icon={ <Icon name='react' /> } style={{ fontSize: '144px', textAlign: 'left', paddingTop: '20px', margin: '8px' }} as='h1' inverted color='blue'/>
-            <Header icon={ <Icon name='node js' /> } style={{ fontSize: '144px', textAlign: 'right' }} as='h1' inverted color='green'/>
+          <Grid.Column floated='right' width={ 6 } >
+            <Header icon={ <Icon name='react' /> } style={{ fontSize: '100px', textAlign: 'right', marginTop: '0.2em' }} as='h1' inverted color='blue'/>
+            <Header icon={ <Icon name='node js' /> } style={{ fontSize: '100px', marginLeft: '1em' }} as='h1' inverted color='green'/>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign='center'>
-          <Button color='blue' style={{ width: '280px' }} size='massive' animated='fade' onClick={ () => {window.open("https://react.semantic-ui.com/", "_blank"); }}>
+          <Button color='blue' style={{ width: '280px' }} size='massive' animated='fade' onClick={() => { window.open("https://react.semantic-ui.com/", "_blank"); }}>
             <Button.Content visible>Learn More</Button.Content>
             <Button.Content hidden>Visit Semantic UI React</Button.Content>
           </Button>
@@ -187,8 +185,7 @@ const Setup = () => (
         >
         Setting Up React
     </Divider>
-    <Segment style={{ padding: '2em 0em' }} vertical>
-      <Container text>
+      <Container text style={{ padding: '2em 0em' }}>
         <Header as='h3' style={{ fontSize: '2em' }}>
           Create a React JS App
         </Header>
@@ -196,7 +193,6 @@ const Setup = () => (
           Add content here...
         </p>
       </Container>
-    </Segment>
     <Segment inverted vertical style={{ padding: '5em 0em' }}>
       <Container>
         <Grid divided inverted stackable>
