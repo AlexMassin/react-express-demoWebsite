@@ -40,7 +40,7 @@ const Setup = () => (
               We recommend setting up a VPS as a permanent, long-term solution for a back-end server.
               There are many options to begin experimenting with such as Google Cloud, Amazon's AWS, and Digital Ocean.
               We set up our website to be hosted on Digital Ocean as it is easy to set up, requires very little validation, and
-              offers many different preset servers that cater to specific needs.
+              offers many different preset frameworks that cater to specific needs, such as Node.
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={ 6 }>
@@ -150,6 +150,20 @@ const Setup = () => (
           Paste in your password, and you will be prompted to change it.
         </p>
       </Container>
+      <Container text style={{ margin: '2em 0em 4em 0em' }}>
+        <Header as='h3' style={{ fontSize: '2em' }}>
+          Update NPM and NPX
+        </Header>
+        <p>
+          In order to create a React app template, we need to use an NPM command. It is recommended to make sure that your server
+          has the latest NPM version which contains packages for the NPX command.
+          <br /><br />
+          You need to execute
+          <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npm install -g npm
+          `}</pre>
+        </p>
+      </Container>
       <Segment inverted style={{ padding: '5em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
@@ -159,7 +173,8 @@ const Setup = () => (
             </Header>
             <p style={{ fontSize: '1.33em' }}>
               Once a back-end server is set up, a React.JS App must be created. We recommend setting up GitHub for better file management and version handling.
-              <br />More content here...
+              Once the App is created, the files may be distributed among your team and edited outside of the server with a text editor of their choice in an
+              environement they are comfortable in.
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={ 6 } >
@@ -183,16 +198,73 @@ const Setup = () => (
           horizontal
           style={{ margin: '3em 0em', textTransform: 'uppercase' }}
         >
-        Setting Up React
+        Creating and Running a React App
     </Divider>
-      <Container text style={{ padding: '2em 0em' }}>
+    <Container text style={{ margin: '2em 0em 4em 0em' }}>
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Create a React JS App
+          Creating a React App
         </Header>
         <p>
-          Add content here...
+          We are ready to create the folder for our web application. A simple command will create the main directory for our application along with
+          subdirectories containing template files to begin creating our website. 
+          <br /><br />
+          You need to execute
+          <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npx create-react-app my-app
+          `}</pre>
+          After pressing enter, it will take a while to create the files. This is the most CPU intensive process of the installation and where the 2 GB of
+          RAM is useful. Once the creation is complete, you will find a folder named <strong>my-app</strong>. From here, you may 
+          <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/#platform-linux" target="_blank"> link up a Git repository </a>
+          (recommended) or 
+          <a href="https://docs.oracle.com/cd/E26502_01/html/E29001/remotehowtoaccess-55154.html" target="_blank"> scp </a> 
+          the files to your local machine so you and your team may edit the files on their own machines with a text editor of their choice, such as Visual Studio Code.
         </p>
-      </Container>
+    </Container>
+    <Container text style={{ margin: '2em 0em 4em 0em' }}>
+        <Header as='h3' style={{ fontSize: '2em' }}>
+          Running a React App
+        </Header>
+        <p>
+          After the files are edited or your build is updated and you wish to see the site hosted, you will need to run the React app to view changes. Once you are in the root
+          directory of your React app you can begin the developmental build with an simple command.
+          <br /><br />
+          You need to execute
+          <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npm start
+          `}</pre>
+          Once the program is running without errors, your website will be publicly visible on browsers by simply typing in your VPS IP into the address bar with the
+          port 3000.
+          <br /><br />
+          You can visit your site by typing
+          <pre style={{ color: '#000000', backgroundColor: '#E8E8E8' }}>{`
+  SERVER_IP_ADDRESS:3000
+          `}</pre>
+          When the web app is running as intended, you can start hosting with an optimized production build. You can create the optimized build with a single command.
+          <br /><br />
+          You need to execute
+          <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npm run build
+  npm install -g serve
+  serve -s build
+          `}</pre>
+          Once the build is served, your website will be publicly visible on browsers by simply typing in your VPS IP into the address bar with the
+          port 5000.
+          <br /><br />
+          You can visit your site by typing
+          <pre style={{ color: '#000000', backgroundColor: '#E8E8E8' }}>{`
+  SERVER_IP_ADDRESS:5000
+          `}</pre>
+        </p>
+    </Container>
+    <Divider
+          as='h3'
+          className='header'
+          horizontal
+          style={{ margin: '2em 0em', textTransform: 'uppercase' }}
+        >
+        Domain Redirection
+    </Divider>
+    [[CONTINUE FROM HERE]]
     <Segment inverted vertical style={{ padding: '5em 0em' }}>
       <Container>
         <Grid divided inverted stackable>
