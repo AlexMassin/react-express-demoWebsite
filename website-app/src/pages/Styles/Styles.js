@@ -9,6 +9,8 @@ import {
 	Header,
 	Transition,
 	Segment,
+	Radio,
+	Button,
 	GridRow,
 	GridColumn
 } from 'semantic-ui-react';
@@ -19,7 +21,7 @@ import {
  */
 
 class Styles extends Component {
-	state = { visible: false, activeIndex: 0 };
+	state = { visible: false, activeIndex: 0, inverted: false, styled: false };
 
 	toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
@@ -35,6 +37,18 @@ class Styles extends Component {
 		this.setState({ activeIndex: newIndex });
 	};
 
+	accordionSegmentStyle() {
+		if (this.state.inverted == true) {
+			return { boxShadow: 'none', border: '0px' };
+		} else {
+			return { backgroundColor: '#F3F3F3', boxShadow: 'none', border: '0px' };
+		}
+	}
+
+	accordionOption(title, text) {
+		return <div style={{ paddingBottom: '1em' }} />;
+	}
+
 	gridCode = `<Grid columns={4}>
 	<Grid.Row>
 		<Grid.Column/>
@@ -48,9 +62,11 @@ class Styles extends Component {
 
 	Accordion() {
 		const { activeIndex } = this.state;
+		const { styled } = this.state;
+		const { inverted } = this.state;
 
 		return (
-			<Accordion>
+			<Accordion styled={styled} inverted={inverted}>
 				<Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
 					<Icon name="dropdown" />
 					What is a dog?
@@ -145,6 +161,7 @@ class Styles extends Component {
 
 	render() {
 		const { visible } = this.state;
+		const { inverted } = this.state;
 		return (
 			<div>
 				<Segment inverted style={{ paddingTop: '8em', paddingBottom: '6em' }} vertical>
@@ -272,40 +289,76 @@ class Styles extends Component {
 						</Container>
 
 						<Grid.Row columns={2} textAlign="center">
-							<Grid.Column>
-								<Grid container textAlign="left">
-									<Container>
-										<Grid.Row>
-											<Header
-												style={{ fontSize: '20px' }}
-												as="h3"
-												color="black"
-												content={'Accodion Options'}
-											/>
-											<Header
-												style={{ fontSize: '16px' }}
-												as="h3"
-												color="blue"
-												content={'Columns'}
-											/>
-											<p>
-												Grids divide horizontal space into indivisible units called "columns".
-												All columns in a grid must specify their width as proportion of the
-												total available row width. All grid systems choose an arbitrary column
-												count to allow per row. Semantic's default theme uses 16 columns.
-											</p>
-
-											<p style={{ color: '#2284D0' }}> Hover over grid to see code</p>
-										</Grid.Row>
-									</Container>
-								</Grid>
+							<Grid.Column textAlign="left" style={{ fontSize: '20px', padding: '1em' }}>
+								<Segment style={this.accordionSegmentStyle()} inverted={inverted}>
+									{this.Accordion()}
+								</Segment>
 							</Grid.Column>
 
-							<Grid.Column
-								textAlign="left"
-								style={{ fontSize: '20px', backgroundColor: 'white', padding: '1em' }}
-							>
-								{this.Accordion()}
+							<Grid.Column>
+								<Grid container stackable verticalAlign="middle" textAlign="left">
+									<Grid.Row>
+										<Grid.Column>
+											<Container>
+												<Header
+													style={{ fontSize: '20px' }}
+													as="h3"
+													color="black"
+													content={'Accordion Options'}
+												/>
+
+												<p style={{ fontSize: '16px', marginBottom: '2em' }}>
+													These are additional options for the Accordion component.
+												</p>
+
+												<Popup
+													trigger={
+														<Radio
+															style={{ paddingBottom: '1em' }}
+															toggle
+															onClick={() => {
+																this.setState({ styled: !this.state.styled });
+															}}
+															label="Styled"
+														/>
+													}
+												>
+													<Popup.Content>
+														<pre>
+															<code>{`<Accordion styled>`}</code>
+														</pre>
+													</Popup.Content>
+												</Popup>
+
+												<br />
+
+												<Popup
+													trigger={
+														<Radio
+															style={{ paddingBottom: '1em' }}
+															toggle
+															onClick={() => {
+																this.setState({ inverted: !this.state.inverted });
+															}}
+															label="Inverted"
+														/>
+													}
+												>
+													<Popup.Content>
+														<pre>
+															<code>{'<Segment inverted>\n\t<Accordion inverted>'}</code>
+														</pre>
+													</Popup.Content>
+												</Popup>
+
+												<p style={{ fontSize: '14px', color: '#2284D0', marginTop: '1em' }}>
+													Click on the toggles to preview the option and hover over the
+													toggles to see the code.
+												</p>
+											</Container>
+										</Grid.Column>
+									</Grid.Row>
+								</Grid>
 							</Grid.Column>
 						</Grid.Row>
 					</Grid>
