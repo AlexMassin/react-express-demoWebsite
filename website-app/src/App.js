@@ -153,8 +153,8 @@ render() {
           horizontal
           style={{ margin: '1em 2em', textTransform: 'uppercase', textAlign: 'center' }}
         >
-          <Icon name='users' circular color='teal'/>
-          Popularity
+          <Icon name='book' circular color='teal'/>
+          Information
         </Divider>
       <Grid celled='internally' columns='equal' stackable>
           <Grid.Row textAlign='center'>
@@ -162,7 +162,7 @@ render() {
              <ReactFC {...chartConfigsBar} />
              <Popup trigger={<Label style={{float: 'left'}} color='violet'  size='tiny'>Citation</Label>} content={"Thinkwik. “Why ReactJS Is Gaining so Much Popularity These Days.” Medium.com, Medium, 6 Dec. 2017, medium.com/@thinkwik/why-reactjs-is-gaining-so-much-popularity-these-days-c3aa686ec0b3."} />
           </Grid.Column>
-          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Grid.Column style={{ paddingBottom: '1em', paddingTop: '2em' }}>
           <Header as='h4' style={{ fontSize: '2em' }}>
             What is ReactJS?
           </Header>
@@ -179,6 +179,19 @@ render() {
             <br />
             Within an article by Medium, it states, "Today, ReactJS has become highly popular because of its extra simplicity and flexibility. Many people are even referring to it as the future of web development. It is estimated that more than 1,300 developers and over 94,000 sites utilize ReactJS" (Thinkwik).
             Furthermore, ReactJS has gained credibility by being the #1 Framework used by Facebook, Airbnb, and Instagram within their web apps.
+          </p>
+          <Header as='h4' style={{ fontSize: '2em' }}>
+            Which developers use ReactJS?
+          </Header>
+          <p style={{ fontSize: '1.1em' }}>
+            Many Front-End Developers use ReactJS because of the way it handles data and its component styled coding. 
+          </p>
+          <Header as='h4' style={{ fontSize: '2em' }}>
+            Which websites use React?
+          </Header>
+          <p style={{ fontSize: '1.1em' }}>
+            Single page applications are the most common websites that use React. However, even with multi-page applications, ReactJS allows for a quality framework that is simplistic and aestetic. 
+            Many big companies today, such as Netflix and Airbnb, use ReactJS.
           </p>
          </Grid.Column>
         </Grid.Row>
@@ -207,6 +220,18 @@ render() {
             <br />
             <br />
             Since NodeJS is extremely flexible, it offers that flexibility towards Express, making it highly demanded within the workspace today.
+          </p>
+          <Header as='h4' style={{ fontSize: '2em' }}>
+            Which developers use Express?
+          </Header>
+          <p style={{ fontSize: '1.1em' }}>
+            Full-Stack Developers utilize Express mostly due to its flexibility inheritied from NodeJS. Mobile Developers also tend to enjoy using it for app development.
+          </p>
+          <Header as='h4' style={{ fontSize: '2em' }}>
+            Which websites use Express?
+          </Header>
+          <p style={{ fontSize: '1.1em' }}>
+            Websites that require a strong back-end and quick performance are the ones that usually use Express. It is one of the most popular frameworks for developers today.
           </p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
@@ -283,27 +308,23 @@ render() {
             <Table.Body>
               <Table.Row>
                 <Popup trigger={<Table.Cell>Express allows for JavaScript to be both used on the back-end and front-end</Table.Cell>} content="This allows JavaScript developers to transition into a more full-stack position. Therefore development becomes much faster and hiring becomes much easier."/>
-                <Table.Cell>Unknown</Table.Cell>
+                <Popup trigger={<Table.Cell>NodeJS is a single threaded framework that listens to events and executes callbacks.</Table.Cell>} content="This means that developers will find it difficult to understand the callback nature of NodeJS. This means that they will not understand how data moves in NodeJS which can become problematic."/>
               </Table.Row>
               <Table.Row>
                 <Popup trigger={<Table.Cell>Express utilizes NodeJS's ability to handle multiple requests at a given time from users.</Table.Cell>} content="This allows for certain apps, like Uber, to choose Express in order to handle the requests from users."/>
-                <Table.Cell>
-                  <Icon name='checkmark' />
-                  Approved
-                </Table.Cell>
+                <Popup trigger={<Table.Cell>NodeJS lacks consistency within its API which causes changes to become backward-incompatible.</Table.Cell>} content="This happens when developers need to make changes on existing code but are using a new version of NodeJS API."/>
               </Table.Row>
               <Table.Row>
                 <Popup trigger={<Table.Cell>Since Express utilizes NodeJS's versatility, it provides an easier experience when hiring a development team.</Table.Cell>} content="Express allows JavaScript to both be used when developing the app and creating the server it will request from. Therefore, the requirements from your developers are not as demanding." />
-                <Table.Cell>Unknown</Table.Cell>
+                <Popup trigger={<Table.Cell>Express is unopinionated which causes a drawback when you need to write everything from scratch</Table.Cell>} content="Unlike other back-end frameworks, like Ruby On Rails, you need to rewrite everything from scratch when coding in NodeJS."/>
               </Table.Row>
               <Table.Row>
                 <Table.Cell>Easy to learn since JavaScript is the base language in the framework.</Table.Cell>
-                <Table.Cell>Unknown</Table.Cell>
-                
+                <Table.Cell>Since NodeJS is single threaded, it is not suitable for heavy-computing applications with long calcualtions.</Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell>Open-source community allows for development of Express to be supported strongly.</Table.Cell>
-                <Table.Cell>Unknown</Table.Cell> 
+                <Table.Cell>Even though NodeJS is stable, many of the npm packages are made by unknown developers with improper documentation.</Table.Cell> 
               </Table.Row>
             </Table.Body>
           </Table>
