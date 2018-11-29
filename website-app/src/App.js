@@ -66,7 +66,7 @@ const myDataSourceBar = {
 const chartConfigsBar = {
       type: 'column2d',
       width: '100%',
-      height: '100%',
+      height: '80%',
       dataFormat: 'json',
       dataSource: myDataSourceBar,
 };
@@ -103,7 +103,7 @@ const myDataSourcePie = {
 const chartConfigsPie = {
     type: 'pie3d',
     width: '100%',
-    height: '100%',
+    height: '80%',
     dataFormat: 'json',
     dataSource: myDataSourcePie,
 };
@@ -158,11 +158,11 @@ render() {
         </Divider>
       <Grid celled='internally' columns='equal' stackable>
           <Grid.Row textAlign='center'>
-          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '1em' }}>
+          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
              <ReactFC {...chartConfigsBar} />
              <Popup trigger={<Label style={{float: 'left'}} color='violet'  size='tiny'>Citation</Label>} content={"Thinkwik. “Why ReactJS Is Gaining so Much Popularity These Days.” Medium.com, Medium, 6 Dec. 2017, medium.com/@thinkwik/why-reactjs-is-gaining-so-much-popularity-these-days-c3aa686ec0b3."} />
           </Grid.Column>
-          <Grid.Column style={{ paddingBottom: '1em', paddingTop: '2em' }}>
+          <Grid.Column style={{ paddingBottom: '4em', paddingTop: '4em' }}>
           <Header as='h4' style={{ fontSize: '2em' }}>
             What is ReactJS?
           </Header>
@@ -201,7 +201,7 @@ render() {
     <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
-          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '4em' }}>
+          <Grid.Column style={{ paddingBottom: '4em', paddingTop: '4em' }}>
           <Header as='h4' style={{ fontSize: '2em' }}>
             What is Express?
           </Header>
@@ -285,11 +285,11 @@ render() {
                 <Popup trigger={<Table.Cell>JSX becomes a barrier for most developers because it is ReactJS specific</Table.Cell>} content="Since JSX is React specific, developers can see learning JSX as a steep learning curve since it includes HTML code within JavaScript files which is odd." />
               </Table.Row>
               <Table.Row>
-                <Popup trigger={<Table.Cell>ReactJS provides a one-direction data flow which allows for a more stable application</Table.Cell>} content="The data flow in ReactJS is only downward data binding. This means that any changes in child props does not affect the parent component to ensure safety and stability within the application. The only way to pass data from a child to a parent is through callbacks." />
+                <Popup trigger={<Table.Cell>ReactJS provides a one-direction data flow which allows for a more stable and secure application.</Table.Cell>} content="The data flow in ReactJS is only downward data binding. This means that any changes in child props does not affect the parent component to ensure safety and stability within the application. The only way to pass data from a child to a parent is through callbacks." />
                 <Popup trigger={<Table.Cell>Since ReactJS changes so much, the documentation on the framework becomes extremely poor with no traces of recent changes</Table.Cell>} content="Since ReactJS changes so much, theres very minimal documentation that keeps up with the changes. That is why most React developers write their own documentation for tools they use when they are making applications." />
               </Table.Row>
               <Table.Row>
-              <Popup trigger={<Table.Cell>The development of ReactJS is at a high pace due to his popularity and open source characteristic</Table.Cell>} content="ReactJS is an open source project made by Facebook. Since the code is on Github, it allows for other developers to work on the framework without having to be at Facebook. This causes the development of the framework to be highly supported."/>
+              <Popup trigger={<Table.Cell>The development of ReactJS is at a high pace due to his popularity and open source characteristic. Developers enjoy being able to use new tools that constantly get developed.</Table.Cell>} content="ReactJS is an open source project made by Facebook. Since the code is on Github, it allows for other developers to work on the framework without having to be at Facebook. This causes the development of the framework to be highly supported."/>
               <Popup trigger={<Table.Cell>The high pace development of ReactJS causes developers to adapt and relearn everything whenever the framework changes.</Table.Cell>} content="Since the framework is at such a high pace development, it causes things to change quite constantly within the framework. Therefore v14 of ReactJS may work but v14.01 may not work for your React app."/>
               </Table.Row>
             </Table.Body>
