@@ -64,7 +64,7 @@ render() {
 							inverted
 							content={'Imperial Caps'}
 						/>
-						<Header style={{ fontSize: '20px' }} as="h3" inverted color="white">
+						<Header style={{ fontSize: '20px' }} as="h3" inverted>
 							Modern Day Helmets for Modern Day Warriors <Icon name='hand rock outline' style={{ color: '#FC8200' }}/>
 					</Header>
 				</Container>
