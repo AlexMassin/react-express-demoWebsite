@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://alexmassin.github.io/cps530-website",
   "dependencies": {
+    "express": "^4.16.4",
     "fusioncharts": "^3.13.2-sr.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

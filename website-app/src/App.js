@@ -139,7 +139,7 @@ render() {
         <Grid.Row>
           <Grid.Column>
           <Transition visible={visible} animation='fade up' duration={8000}>
-              <Header style={{fontSize: '72px', float: 'right', margin: '24px'}} as='h1' inverted color='green' icon={<Icon name='node js' />} content={'What is NodeJS?'} />
+              <Header style={{fontSize: '72px', float: 'right', margin: '24px'}} as='h1' inverted color='green' icon={<Icon name='node js' />} content={'What is Express?'} />
           </Transition>
           </Grid.Column>
         </Grid.Row>
@@ -188,22 +188,25 @@ render() {
     <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
-          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-          <Header as='h3' style={{ fontSize: '4em' }}>
-            Who uses NodeJS?
+          <Grid.Column style={{ paddingBottom: '2em', paddingTop: '4em' }}>
+          <Header as='h4' style={{ fontSize: '2em' }}>
+            What is Express?
           </Header>
-          <p style={{ fontSize: '1.33em' }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance. Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance.
+          <p style={{ fontSize: '1.1em' }}>
+           Express is a web application server framework that provides a thin layer of robust features and 
+           applications on top of NodeJS. NodeJS is an open source server environment that uses Chrome's V8 JavaScript engine.
+           </p>
+          <Header as='h4' style={{ fontSize: '2em' }}>
+            Why is it so popular?
+          </Header>
+          <p style={{ fontSize: '1.1em' }}>
+            Since Express is built off of NodeJS, it provides the same features and flexibility that NodeJS provides. Moreover, since 
+            Express is a minimailistic framework, it does not take away from the raw performance of NodeJS. 
+            Express also adds functionality to NodeJS, such as routing, middleware, and static files serving. 
+            This framework has become a Full Stack Developer's dream due to these benefits.w
+            <br />
+            <br />
+            Since NodeJS is extremely flexible, it offers that flexibility towards Express, making it highly demanded within the workspace today.
           </p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
@@ -218,6 +221,7 @@ render() {
     <Header as='h1' style = {{margin: '3em 3em', marginBottom: '-1em'}} icon textAlign='center'>
       <Icon name='code' color='red' circular />
       <Header.Content>Strengths & Weaknesses</Header.Content>
+      <Header.Subheader>Hover over cells for more detail</Header.Subheader>
     </Header>
 
     <Grid stackable columns='equal'>
@@ -231,40 +235,40 @@ render() {
         <Grid.Column>
         <Header as='h2' style = {{margin: '1em'}} icon textAlign='center'>
           <Icon name='node js' color='green' circular />
-          <Header.Content>NodeJS</Header.Content>
+          <Header.Content>Express</Header.Content>
         </Header>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row textAlign='center'>
         <Grid.Column>
             <center>
-            <Table celled fixed style={{width: '75%', marginBottom: '5em'}}>
+            <Table color = 'blue' celled fixed style={{width: '75%', marginBottom: '5em'}}>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Status</Table.HeaderCell>
+                <Table.HeaderCell>Strength</Table.HeaderCell>
+                <Table.HeaderCell>Weakness</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
 
             <Table.Body>
               <Table.Row>
-                <Table.Cell>Name</Table.Cell>
+                <Popup trigger={<Table.Cell>Virtual DOM in ReactJS promotes a stronger user experience & allows for faster development</Table.Cell>} content="Usually frameworks need to update the whole DOM of a website when content changes. ReactJS uses an abstract copy of the DOM called a Virtual DOM. This Virtual DOM allows ReactJS apps to update small changes without affecting other parts of the interface." />
                 <Table.Cell>Unknown</Table.Cell>
               </Table.Row>
-              <Table.Row positive>
-                <Table.Cell>Jimmy</Table.Cell>
+              <Table.Row>
+                <Popup trigger={<Table.Cell>React components save developers time when code needs to be reused</Table.Cell>} content="Since ReactJS allows for JSX code to be broken down into components, this allows developers to create a modular app with minimal requirement to copy code into HTML files. This is why ReactJS is highly preferred over AngularJS by developers today. Changing one component does not affect anything else and allows for isolated updates to an application."/>
                 <Table.Cell>
                   <Icon name='checkmark' />
                   Approved
                 </Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
+              <Popup trigger={<Table.Cell>ReactJS provides a one-direction data flow which allows for a more stable application</Table.Cell>} content="The data flow in ReactJS is only downward data binding. This means that any changes in child props does not affect the parent component to ensure safety and stability within the application. The only way to pass data from a child to a parent is through callbacks." />
                 <Table.Cell>Unknown</Table.Cell>
                 
               </Table.Row>
               <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
+              <Popup trigger={<Table.Cell>The development of ReactJS is at a high pace due to his popularity and open source characteristic</Table.Cell>} content="ReactJS is an open source project made by Facebook. Since the code is on Github, it allows for other developers to work on the framework without having to be at Facebook. This causes the development of the framework to be highly supported."/>
                 <Table.Cell>Unknown</Table.Cell>
                 
               </Table.Row>
@@ -296,8 +300,8 @@ render() {
             <Table celled fixed style={{width: '75%', marginBottom: '5em'}}>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Status</Table.HeaderCell>
+                <Table.HeaderCell>Strength</Table.HeaderCell>
+                <Table.HeaderCell>Weakness</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
 
@@ -348,41 +352,6 @@ render() {
       </Grid.Row>
     </Grid>
 
-
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
-      <Container>
-        <Grid divided inverted stackable>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='About' />
-              <List link inverted>
-                <List.Item as='a'>Sitemap</List.Item>
-                <List.Item as='a'>Contact Us</List.Item>
-                <List.Item as='a'>Religious Ceremonies</List.Item>
-                <List.Item as='a'>Gazebo Plans</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='Services' />
-              <List link inverted>
-                <List.Item as='a'>Banana Pre-Order</List.Item>
-                <List.Item as='a'>DNA FAQ</List.Item>
-                <List.Item as='a'>How To Access</List.Item>
-                <List.Item as='a'>Favorite X-Men</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={7}>
-              <Header as='h4' inverted>
-                Footer Header
-              </Header>
-              <p>
-                Extra space for a call to action inside the footer that could help re-engage users.
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
   </div>
   );
   }
