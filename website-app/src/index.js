@@ -4,10 +4,13 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Routes from './router';
 import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
+
 
 ReactDOM.render(
     <NavBar>
         <Routes />
+        <Footer />
     </NavBar>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
