@@ -216,7 +216,7 @@ render() {
 
 
     <Header as='h1' style = {{margin: '3em 3em', marginBottom: '-1em'}} icon textAlign='center'>
-      <Icon name='code' color='green' circular />
+      <Icon name='code' color='red' circular />
       <Header.Content>Strengths & Weaknesses</Header.Content>
     </Header>
 
