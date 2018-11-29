@@ -1,5 +1,9 @@
 import 'semantic-ui-css/semantic.min.css';
 import React, { Component } from 'react';
+import standard_image from '../../images/standard.png';
+import color_image from '../../images/color.jpg';
+import link_image from '../../images/link.png';
+import paragraph_image from '../../images/paragraph.png';
 import {
 	Accordion,
 	Icon,
@@ -10,9 +14,12 @@ import {
 	Transition,
 	Segment,
 	Radio,
+	Card,
+	Feed,
+	Image,
 	Button,
-	GridRow,
-	GridColumn
+	Modal,
+	ModalActions
 } from 'semantic-ui-react';
 
 /* eslint-disable react/no-multi-comp */
@@ -21,7 +28,7 @@ import {
  */
 
 class Styles extends Component {
-	state = { visible: false, activeIndex: 0, inverted: false, styled: false };
+	state = { visible: false, activeIndex: 0, inverted: false, styled: true };
 
 	toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
@@ -59,6 +66,172 @@ class Styles extends Component {
 	...
 </Grid>
 `;
+
+	linkCode = `<Card
+image = "..."
+href = "..."
+header = "..."
+description = "..."
+/>
+`;
+
+	cardCode = `<Card>
+	<Image src="..."/>
+	<Card.Content>
+		<Card.Header/>
+		<Card.Description/>
+	</Card.Content>
+</Card>
+`;
+
+	feedCardCode = `<Card>
+	<Card.Content>
+		<Card.Header/>
+		<Card.Description/>
+	</Card.Content>
+	<Card.Content>
+		<Feed/>
+	</Card.Content>
+</Card>
+`;
+
+	colorCardCode = `<Card
+image = "..."
+color = "..."
+header = "..."
+description = "..."
+/>
+`;
+
+	standardModalText = `To top align the modal set centered attribute to false.
+
+<Modal trigger={<Button/>} centered='true'>
+	<Modal.Header/>
+	<Modal.Content image>
+		<Image/>
+		<Modal.Description/>
+	</Modal.Content>
+</Modal>
+`;
+
+	basicModalText = `<Modal trigger={<Button/>} basic >
+	<Modal.Header/>
+	<Modal.Content/>
+	<Modal.Actions>
+		<Button/>
+		<Button/>
+	</Modal.Actions>
+</Modal>
+`;
+
+	scrollingModalText = `<Modal trigger={<Button/>} centered='true'>
+	<Modal.Header/>
+	<Modal.Content scrolling image>
+		<Image/>
+		<Modal.Description/>
+	</Modal.Content>
+</Modal>
+`;
+
+	Card(image, header, description) {
+		return (
+			<Card>
+				<Image src={image} style={{ height: '225px', objectFit: 'cover' }} />
+				<Card.Content>
+					<Card.Header>{header}</Card.Header>
+					<Card.Meta>
+						<span className="date">meta</span>
+					</Card.Meta>
+					<Card.Description>{description}</Card.Description>
+				</Card.Content>
+				<Card.Content extra>
+					<a>
+						<Icon name="dollar" />
+						extra
+					</a>
+				</Card.Content>
+			</Card>
+		);
+	}
+
+	contentCard() {
+		return (
+			<Card>
+				<Card.Content>
+					<Card.Header>Recent Activity</Card.Header>
+					<Card.Description>This is an example using a Feed within a Card </Card.Description>
+				</Card.Content>
+				<Card.Content>
+					<Feed>
+						<Feed.Event>
+							<Feed.Label icon="dollar" />
+							<Feed.Content>
+								<Feed.Date content="1 day ago" />
+								<Feed.Summary>
+									You added <a>Jenny Hess</a> to your <a>coworker</a> group.
+								</Feed.Summary>
+							</Feed.Content>
+						</Feed.Event>
+
+						<Feed.Event>
+							<Feed.Label icon="address book" />
+							<Feed.Content>
+								<Feed.Date content="3 days ago" />
+								<Feed.Summary>
+									You added <a>Molly Malone</a> as a friend.
+								</Feed.Summary>
+							</Feed.Content>
+						</Feed.Event>
+
+						<Feed.Event>
+							<Feed.Label icon="envelope" />
+							<Feed.Content>
+								<Feed.Date content="4 days ago" />
+								<Feed.Summary>
+									You added <a>Elliot Baker</a> to your <a>musicians</a> group.
+								</Feed.Summary>
+							</Feed.Content>
+						</Feed.Event>
+						<Feed.Event>
+							<Feed.Label icon="bell" />
+							<Feed.Content>
+								<Feed.Date content="7 days ago" />
+								<Feed.Summary>
+									You added <a>Joe West</a> to your <a>sports</a> group.
+								</Feed.Summary>
+							</Feed.Content>
+						</Feed.Event>
+					</Feed>
+				</Card.Content>
+			</Card>
+		);
+	}
+
+	colorCard(imageSrc) {
+		return (
+			<Card color="blue">
+				<Image src={imageSrc} style={{ height: '300px', objectFit: 'cover' }} />
+				<Card.Content>
+					<Card.Header>Color Card</Card.Header>
+					<Card.Description>
+						The color attribute allows you to add a colored bar to the card.
+					</Card.Description>
+				</Card.Content>
+			</Card>
+		);
+	}
+
+	linkCard(imageSrc) {
+		return (
+			<Card href="https://react.semantic-ui.com/views/card/">
+				<Image inverted src={imageSrc} style={{ height: '300px', objectFit: 'cover' }} />
+				<Card.Content>
+					<Card.Header>Link Card</Card.Header>
+					<Card.Description>This card will take you to the React UI Semantic Card page.</Card.Description>
+				</Card.Content>
+			</Card>
+		);
+	}
 
 	Accordion() {
 		const { activeIndex } = this.state;
@@ -181,6 +354,8 @@ class Styles extends Component {
 					</Transition>
 				</Segment>
 
+				{/* Grid Segment */}
+
 				<Segment style={{ paddingTop: '4em', paddingBottom: '6em' }} vertical>
 					<Grid container stackable verticalAlign="middle">
 						<Container style={{ paddingBottom: '2em' }} textAlign="center">
@@ -191,7 +366,7 @@ class Styles extends Component {
 											href="https://react.semantic-ui.com/collections/grid/"
 											style={{ cursor: 'pointer', color: 'black' }}
 										>
-											React Grid
+											Grid
 										</a>
 									</Header>
 								</Grid.Column>
@@ -209,11 +384,11 @@ class Styles extends Component {
 
 						<Grid.Row columns={2} textAlign="center">
 							<Grid.Column>
-								<Popup trigger={this.Grid()} style={{ padding: '2em' }}>
+								<Popup inverted trigger={this.Grid()} style={{ padding: '2em' }}>
 									<Popup.Header style={{ color: '#2284D0' }}>3 x 4 Grid</Popup.Header>
 									<Popup.Content>
 										<pre>
-											<code>{this.gridCode}</code>
+											<code style={{ color: '#53FF54' }}>{this.gridCode}</code>
 										</pre>
 									</Popup.Content>
 								</Popup>
@@ -265,6 +440,8 @@ class Styles extends Component {
 					</Grid>
 				</Segment>
 
+				{/* Grid Segment */}
+
 				<Segment style={{ paddingTop: '4em', paddingBottom: '6em', backgroundColor: '#F3F3F3' }} vertical>
 					<Grid container stackable verticalAlign="middle">
 						<Container style={{ paddingBottom: '2em' }} textAlign="center">
@@ -312,8 +489,10 @@ class Styles extends Component {
 												</p>
 
 												<Popup
+													inverted
 													trigger={
 														<Radio
+															defaultChecked
 															style={{ paddingBottom: '1em' }}
 															toggle
 															onClick={() => {
@@ -325,7 +504,9 @@ class Styles extends Component {
 												>
 													<Popup.Content>
 														<pre>
-															<code>{`<Accordion styled>`}</code>
+															<code
+																style={{ color: '#53FF54' }}
+															>{`<Accordion styled>`}</code>
 														</pre>
 													</Popup.Content>
 												</Popup>
@@ -333,6 +514,7 @@ class Styles extends Component {
 												<br />
 
 												<Popup
+													inverted
 													trigger={
 														<Radio
 															style={{ paddingBottom: '1em' }}
@@ -346,7 +528,9 @@ class Styles extends Component {
 												>
 													<Popup.Content>
 														<pre>
-															<code>{'<Segment inverted>\n\t<Accordion inverted>'}</code>
+															<code style={{ color: '#53FF54' }}>
+																{'<Segment inverted>\n\t<Accordion inverted>'}
+															</code>
 														</pre>
 													</Popup.Content>
 												</Popup>
@@ -360,6 +544,310 @@ class Styles extends Component {
 									</Grid.Row>
 								</Grid>
 							</Grid.Column>
+						</Grid.Row>
+					</Grid>
+				</Segment>
+
+				{/* Card Segment */}
+
+				<Segment style={{ paddingTop: '4em', paddingBottom: '6em' }} vertical>
+					<Grid container stackable verticalAlign="middle">
+						<Container style={{ paddingBottom: '2em' }} textAlign="center">
+							<Grid.Row style={{ paddingBottom: '1em' }}>
+								<Grid.Column>
+									<Header style={{ fontSize: '30px' }} as="h2" color="black">
+										<a
+											href="https://react.semantic-ui.com/views/card/"
+											style={{ cursor: 'pointer', color: 'black' }}
+										>
+											Card
+										</a>
+									</Header>
+								</Grid.Column>
+							</Grid.Row>
+
+							<Grid.Row>
+								<Container>
+									<p>A card displays site content in a manner similar to a playing card</p>
+									<p style={{ fontSize: '14px', color: '#2284D0', marginTop: '1em' }}>
+										Hover over cards to reveal code.
+									</p>
+								</Container>
+							</Grid.Row>
+						</Container>
+
+						<Grid.Row textAlign="center">
+							<Grid.Column>
+								<Card.Group itemsPerRow={4}>
+									<Popup
+										inverted
+										trigger={this.Card(
+											standard_image,
+											'Standard Card',
+											'This is standard Card created with multiple tags rather than <Card> attributes.'
+										)}
+										style={{ padding: '2em' }}
+									>
+										<Popup.Content>
+											<pre>
+												<code style={{ color: '#53FF54' }}>{this.cardCode}</code>
+											</pre>
+										</Popup.Content>
+									</Popup>
+
+									<Popup inverted trigger={this.linkCard(link_image)} style={{ padding: '2em' }}>
+										<Popup.Content>
+											<pre>
+												<code style={{ color: '#53FF54' }}>{this.linkCode}</code>
+											</pre>
+										</Popup.Content>
+									</Popup>
+
+									<Popup inverted trigger={this.colorCard(color_image)} style={{ padding: '2em' }}>
+										<Popup.Content>
+											<pre>
+												<code style={{ color: '#53FF54' }}>{this.colorCardCode}</code>
+											</pre>
+										</Popup.Content>
+									</Popup>
+
+									<Popup inverted trigger={this.contentCard()} style={{ padding: '2em' }}>
+										<Popup.Content>
+											<pre>
+												<code style={{ color: '#53FF54' }}>{this.feedCardCode}</code>
+											</pre>
+										</Popup.Content>
+									</Popup>
+								</Card.Group>
+							</Grid.Column>
+						</Grid.Row>
+					</Grid>
+				</Segment>
+
+				{/* Modal */}
+
+				<Segment style={{ paddingTop: '4em', paddingBottom: '6em', backgroundColor: '#F3F3F3' }} vertical>
+					<Grid container stackable verticalAlign="middle">
+						<Container style={{ paddingBottom: '2em' }} textAlign="center">
+							<Grid.Row style={{ paddingBottom: '1em' }}>
+								<Grid.Column>
+									<Header style={{ fontSize: '30px' }} as="h2" color="black">
+										<a
+											href="https://react.semantic-ui.com/modules/modal/"
+											style={{ cursor: 'pointer', color: 'black' }}
+										>
+											Modal
+										</a>
+									</Header>
+								</Grid.Column>
+							</Grid.Row>
+
+							<Grid.Row>
+								<Container>
+									<p>
+										A modal displays content that temporarily blocks interactions with the main view
+										of a site.
+									</p>
+									<p style={{ fontSize: '14px', color: '#2284D0', marginTop: '1em' }}>
+										Hover over the modals to see code. Click to see example.
+									</p>
+								</Container>
+							</Grid.Row>
+						</Container>
+
+						<Grid.Row textAlign="center">
+							<Container textAlign="center">
+								<Modal
+									trigger={
+										<Button color="blue" style={{ padding: '0px' }}>
+											<Popup
+												inverted
+												trigger={<div style={{ padding: '20px' }}>Standard Modal</div>}
+											>
+												<Popup.Content>
+													<pre>
+														<code style={{ color: '#53FF54' }}>
+															{this.standardModalText}
+														</code>
+													</pre>
+												</Popup.Content>
+											</Popup>
+										</Button>
+									}
+								>
+									<Modal.Header>Select a Photo</Modal.Header>
+									<Modal.Content image>
+										<Image wrapped size="medium" src={color_image} />
+										<Modal.Description>
+											<Header>Default Profile Image</Header>
+											<p>
+												We've found the following gravatar image associated with your e-mail
+												address.
+											</p>
+											<p>Is it okay to use this photo?</p>
+										</Modal.Description>
+									</Modal.Content>
+								</Modal>
+
+								<Modal
+									basic
+									trigger={
+										<Button color="blue" style={{ padding: '0px' }}>
+											<Popup
+												inverted
+												trigger={<div style={{ padding: '20px' }}>Basic Modal</div>}
+											>
+												<Popup.Content>
+													<pre>
+														<code style={{ color: '#53FF54' }}>{this.basicModalText}</code>
+													</pre>
+												</Popup.Content>
+											</Popup>
+										</Button>
+									}
+								>
+									<Header icon="archive" content="Archive Old Messages" />
+									<Modal.Content>
+										<p>
+											Your inbox is getting full, would you like us to enable automatic archiving
+											of old messages?
+										</p>
+									</Modal.Content>
+									<Modal.Actions>
+										<Button color="red" inverted>
+											<Icon name="remove" /> No
+										</Button>
+										<Button color="green" inverted>
+											<Icon name="checkmark" /> Yes
+										</Button>
+									</Modal.Actions>
+								</Modal>
+
+								<Modal
+									trigger={
+										<Button color="blue" style={{ padding: '0px' }}>
+											<Popup
+												inverted
+												trigger={<div style={{ padding: '20px' }}>Scrolling Modal</div>}
+											>
+												<Popup.Content>
+													<pre>
+														<code style={{ color: '#53FF54' }}>
+															{this.scrollingModalText}
+														</code>
+													</pre>
+												</Popup.Content>
+											</Popup>
+										</Button>
+									}
+								>
+									<Modal.Header>Profile Picture</Modal.Header>
+									<Modal.Content scrolling image>
+										<Image wrapped size="medium" src={standard_image} />
+										<Modal.Description>
+											<Header>Modal Header</Header>
+											<p>
+												This is an example of expanded content that will cause the modal's
+												dimmer to scroll
+											</p>
+											<Image src={paragraph_image} />
+											<Image src={paragraph_image} />
+											<Image src={paragraph_image} />
+											<Image src={paragraph_image} />
+											<Image src={paragraph_image} />
+											<Image src={paragraph_image} />
+											<Image src={paragraph_image} />
+											<br />
+										</Modal.Description>
+									</Modal.Content>
+								</Modal>
+								{/* </Container>
+						</Grid.Row>
+
+						<Container textAlign="center">
+							<Grid.Row> */}
+								<Modal
+									size="mini"
+									trigger={
+										<Button color="blue" style={{ padding: '0px' }}>
+											<Popup inverted trigger={<div style={{ padding: '20px' }}>Mini Modal</div>}>
+												<Popup.Content>
+													<pre>
+														<code
+															style={{ color: '#53FF54' }}
+														>{`<Modal size='mini' trigger={}>\n\t...\n</Modal>`}</code>
+													</pre>
+												</Popup.Content>
+											</Popup>
+										</Button>
+									}
+								>
+									<Modal.Header>Delete Your Account</Modal.Header>
+									<Modal.Content>
+										<p>Are you sure you want to delete your account</p>
+									</Modal.Content>
+									<Modal.Actions>
+										<Button negative>No</Button>
+										<Button positive icon="checkmark" labelPosition="right" content="Yes" />
+									</Modal.Actions>
+								</Modal>
+								<Modal
+									size="small"
+									trigger={
+										<Button color="blue" style={{ padding: '0px' }}>
+											<Popup
+												inverted
+												trigger={<div style={{ padding: '20px' }}>Small Modal</div>}
+											>
+												<Popup.Content>
+													<pre>
+														<code
+															style={{ color: '#53FF54' }}
+														>{`<Modal size='small' trigger={}>\n\t...\n</Modal>`}</code>
+													</pre>
+												</Popup.Content>
+											</Popup>
+										</Button>
+									}
+								>
+									<Modal.Header>Delete Your Account</Modal.Header>
+									<Modal.Content>
+										<p>Are you sure you want to delete your account</p>
+									</Modal.Content>
+									<Modal.Actions>
+										<Button negative>No</Button>
+										<Button positive icon="checkmark" labelPosition="right" content="Yes" />
+									</Modal.Actions>
+								</Modal>
+								<Modal
+									size="fullscreen"
+									trigger={
+										<Button color="blue" style={{ padding: '0px' }}>
+											<Popup
+												inverted
+												trigger={<div style={{ padding: '20px' }}>Fullscreen Modal</div>}
+											>
+												<Popup.Content>
+													<pre>
+														<code
+															style={{ color: '#53FF54' }}
+														>{`<Modal size='fullscreen' trigger={}>\n\t...\n</Modal>`}</code>
+													</pre>
+												</Popup.Content>
+											</Popup>
+										</Button>
+									}
+								>
+									<Modal.Header>Delete Your Account</Modal.Header>
+									<Modal.Content>
+										<p>Are you sure you want to delete your account</p>
+									</Modal.Content>
+									<Modal.Actions>
+										<Button negative>No</Button>
+										<Button positive icon="checkmark" labelPosition="right" content="Yes" />
+									</Modal.Actions>
+								</Modal>
+							</Container>
 						</Grid.Row>
 					</Grid>
 				</Segment>
