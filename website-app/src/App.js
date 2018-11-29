@@ -253,43 +253,19 @@ render() {
             <Table.Body>
               <Table.Row>
                 <Popup trigger={<Table.Cell>Virtual DOM in ReactJS promotes a stronger user experience & allows for faster development</Table.Cell>} content="Usually frameworks need to update the whole DOM of a website when content changes. ReactJS uses an abstract copy of the DOM called a Virtual DOM. This Virtual DOM allows ReactJS apps to update small changes without affecting other parts of the interface." />
-                <Table.Cell>Unknown</Table.Cell>
+                <Popup trigger={<Table.Cell>ReactJS has been reported to have some issues with Google's Seach Engine Optimization which has caused developers a headache when making web apps.</Table.Cell>} content="Google has reported that its SEO cannot handle dynamic web pages that consist of client-side rendering. Therefore it makes it tricky for some React Apps to be published properly." />
               </Table.Row>
               <Table.Row>
                 <Popup trigger={<Table.Cell>React components save developers time when code needs to be reused</Table.Cell>} content="Since ReactJS allows for JSX code to be broken down into components, this allows developers to create a modular app with minimal requirement to copy code into HTML files. This is why ReactJS is highly preferred over AngularJS by developers today. Changing one component does not affect anything else and allows for isolated updates to an application."/>
-                <Table.Cell>
-                  <Icon name='checkmark' />
-                  Approved
-                </Table.Cell>
+                <Popup trigger={<Table.Cell>JSX becomes a barrier for most developers because it is ReactJS specific</Table.Cell>} content="Since JSX is React specific, developers can see learning JSX as a steep learning curve since it includes HTML code within JavaScript files which is odd." />
               </Table.Row>
               <Table.Row>
-              <Popup trigger={<Table.Cell>ReactJS provides a one-direction data flow which allows for a more stable application</Table.Cell>} content="The data flow in ReactJS is only downward data binding. This means that any changes in child props does not affect the parent component to ensure safety and stability within the application. The only way to pass data from a child to a parent is through callbacks." />
-                <Table.Cell>Unknown</Table.Cell>
-                
+                <Popup trigger={<Table.Cell>ReactJS provides a one-direction data flow which allows for a more stable application</Table.Cell>} content="The data flow in ReactJS is only downward data binding. This means that any changes in child props does not affect the parent component to ensure safety and stability within the application. The only way to pass data from a child to a parent is through callbacks." />
+                <Popup trigger={<Table.Cell>Since ReactJS changes so much, the documentation on the framework becomes extremely poor with no traces of recent changes</Table.Cell>} content="Since ReactJS changes so much, theres very minimal documentation that keeps up with the changes. That is why most React developers write their own documentation for tools they use when they are making applications." />
               </Table.Row>
               <Table.Row>
               <Popup trigger={<Table.Cell>The development of ReactJS is at a high pace due to his popularity and open source characteristic</Table.Cell>} content="ReactJS is an open source project made by Facebook. Since the code is on Github, it allows for other developers to work on the framework without having to be at Facebook. This causes the development of the framework to be highly supported."/>
-                <Table.Cell>Unknown</Table.Cell>
-                
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
-                <Table.Cell>Unknown</Table.Cell>
-                
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
-                <Table.Cell>Unknown</Table.Cell>
-                
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
-                <Table.Cell>Unknown</Table.Cell>
-                
-              </Table.Row>
-              <Table.Row negative>
-                <Table.Cell>Jill</Table.Cell>
-                <Table.Cell>Unknown</Table.Cell>
+              <Popup trigger={<Table.Cell>The high pace development of ReactJS causes developers to adapt and relearn everything whenever the framework changes.</Table.Cell>} content="Since the framework is at such a high pace development, it causes things to change quite constantly within the framework. Therefore v14 of ReactJS may work but v14.01 may not work for your React app."/>
               </Table.Row>
             </Table.Body>
           </Table>
@@ -297,53 +273,37 @@ render() {
         </Grid.Column>
         <Grid.Column>
         <center>
-            <Table celled fixed style={{width: '75%', marginBottom: '5em'}}>
+            <Table color='green' celled fixed style={{width: '75%', marginBottom: '5em'}}>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Strength</Table.HeaderCell>
                 <Table.HeaderCell>Weakness</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
-
             <Table.Body>
               <Table.Row>
-                <Table.Cell>Name</Table.Cell>
+                <Popup trigger={<Table.Cell>Express allows for JavaScript to be both used on the back-end and front-end</Table.Cell>} content="This allows JavaScript developers to transition into a more full-stack position. Therefore development becomes much faster and hiring becomes much easier."/>
                 <Table.Cell>Unknown</Table.Cell>
               </Table.Row>
-              <Table.Row positive>
-                <Table.Cell>Jimmy</Table.Cell>
+              <Table.Row>
+                <Popup trigger={<Table.Cell>Express utilizes NodeJS's ability to handle multiple requests at a given time from users.</Table.Cell>} content="This allows for certain apps, like Uber, to choose Express in order to handle the requests from users."/>
                 <Table.Cell>
                   <Icon name='checkmark' />
                   Approved
                 </Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
+                <Popup trigger={<Table.Cell>Since Express utilizes NodeJS's versatility, it provides an easier experience when hiring a development team.</Table.Cell>} content="Express allows JavaScript to both be used when developing the app and creating the server it will request from. Therefore, the requirements from your developers are not as demanding." />
                 <Table.Cell>Unknown</Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
+                <Table.Cell>Easy to learn since JavaScript is the base language in the framework.</Table.Cell>
                 <Table.Cell>Unknown</Table.Cell>
                 
               </Table.Row>
               <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
-                <Table.Cell>Unknown</Table.Cell>
-                
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
-                <Table.Cell>Unknown</Table.Cell>
-                
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
-                <Table.Cell>Unknown</Table.Cell>
-                
-              </Table.Row>
-              <Table.Row negative>
-                <Table.Cell>Jill</Table.Cell>
-                <Table.Cell>Unknown</Table.Cell>
+                <Table.Cell>Open-source community allows for development of Express to be supported strongly.</Table.Cell>
+                <Table.Cell>Unknown</Table.Cell> 
               </Table.Row>
             </Table.Body>
           </Table>
