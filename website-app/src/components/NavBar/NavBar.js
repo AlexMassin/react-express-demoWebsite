@@ -22,10 +22,10 @@ class NavBar extends Component {
         <Menu
           fixed='top'
           inverted
+          style={{opacity: '0.9'}}
           color='violet'
-          secondary
           size='large'
-          pointing
+          secondary
         >
           <Container>
             <Menu.Item  name='home' 
