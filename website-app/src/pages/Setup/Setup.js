@@ -312,7 +312,6 @@ const Setup = () => (
               FIX THIS SECTION CUZ IDK HOW TO DO INSTRUCTIONS
             </p>
     </Container>
-
   </div>
 )
 export default Setup

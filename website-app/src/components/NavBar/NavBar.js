@@ -5,6 +5,7 @@ import {
   Container,
   Menu,
   Icon,
+  Button
 } from 'semantic-ui-react'
 
 class NavBar extends Component {
@@ -22,10 +23,10 @@ class NavBar extends Component {
         <Menu
           fixed='top'
           inverted
+          style={{opacity: '0.9', height:'2em'}}
           color='violet'
-          secondary
           size='large'
-          pointing
+          secondary
         >
           <Container>
             <Menu.Item  name='home' 
@@ -46,9 +47,17 @@ class NavBar extends Component {
               <Menu.Item  name='team' 
                         active={window.location.pathname === '/team'} 
                         onClick={this.handleItemClick} />
+            {Boolean(window.location.pathname === '/demonstration') && 
             <Menu.Item position='right'>
-              <Icon name='react' size='large' />
-            </Menu.Item>
+              <Button basic color='yellow' id='shopping-cart'  animated='fade'>
+              <Button.Content hidden>
+                <Icon size='large' style={{marginTop: '-4px'}} name='in cart' />
+              </Button.Content>
+              <Button.Content visible>
+                <Icon size='large' name='cart' />
+              </Button.Content>
+              </Button>
+            </Menu.Item>}
           </Container>
         </Menu>
     {children}
