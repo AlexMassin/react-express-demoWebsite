@@ -16,6 +16,7 @@ import {
   Grid,
   Header,
   Transition,
+  Message,
   Icon,
   Image,
   List,
@@ -66,16 +67,6 @@ const Setup = () => (
         Setting Up Digital Ocean
     </Divider>
       <Container text>
-        <Header as='h3' style={{ fontSize: '2em' }}>
-          Create a Digital Ocean Account
-        </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          Sign-up for an account with digital ocean. For new accounts, you will receive a $100 credit for 60 days to gauge your experience. 
-          Like other VPS services, you will need to provide a valid credit card and email address to complete account validation for 
-          security purposes. You will not be charged until your trial is over and if you do not want to continue, you can simply deactive
-          your account.
-        </p>
-        <br />
         <Header as='h3' style={{ fontSize: '2em' }}>
           Create a New Project
         </Header>
@@ -162,6 +153,21 @@ const Setup = () => (
           <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
   npm install -g npm
           `}</pre>
+        </p>
+      </Container>
+      <Container text style={{ margin: '2em 0em 4em 0em' }}>
+        <Header as='h3' style={{ fontSize: '2em' }}>
+          Install ExpressJS and MySQL
+        </Header>
+        <p>
+          ExpressJS is a simple installation and allows for you to begin working on the back-end for the demonstration.
+          <br /><br />
+          You need to execute
+          <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npm install express --save
+          `}</pre>
+          <br />
+          write more here!!!!!!!!!!!!!!!!!!
         </p>
       </Container>
       <Segment inverted style={{ padding: '5em 0em' }} vertical>
@@ -256,16 +262,56 @@ const Setup = () => (
           `}</pre>
         </p>
     </Container>
-    <Divider
-          as='h3'
-          className='header'
-          horizontal
-          style={{ margin: '2em 0em', textTransform: 'uppercase' }}
-        >
-        Domain Redirection
-    </Divider>
-    [[CONTINUE FROM HERE]]
-   
+
+    <Container text style={{ margin: '2em 0em 4em 0em' }}>
+            <Header as='h3' style={{ fontSize: '2em' }}>
+              Installing Semantic UI React
+            </Header>
+            <p>
+              Now it is time to add certain extensions to your React App by using NodeJS. NodeJS has a large library of modules and extensions
+              that allow for certain key features to be added to your application.
+              <br /><br />
+              In this application, Semantic UI and other extensions were installed to create a visually appealing website. To install Semantic UI React,
+              we will be using npm again.
+              <br />
+              <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npm install semantic-ui-react
+  npm install semantic-ui-css
+              `}</pre>
+              <br />
+              Within your main styles.css file, include this import statement in order to implement the Semantic UI CSS designs.
+              <br />
+              <Message color='black'>import 'semantic-ui-css/semantic.min.css';</Message>
+              <br />
+              Note: Make sure you refer to <a href="https://react.semantic-ui.com/" target="_blank">Semantic UI React</a> and <strong>NOT</strong> <a href="https://semantic-ui.com/" target="_blank">Semantic UI</a>
+              since they offer different documentation.
+            </p>
+    </Container>
+
+        <Container text style={{ margin: '2em 0em 4em 0em' }}>
+            <Header as='h3' style={{ fontSize: '2em' }}>
+              Routing w/ ReactJS
+            </Header>
+            <p>
+              ReactJS is a great framework for single page applications. However, in order to have a multiple page application, you
+              first need to install a module that allows for routes to be created. There are two ways this can be done within this application.
+              Firstly, you can install React Router, or you can use NodeJS to route the pages within the back-end. For simplicity, the React Router
+              module allowed for optimal routing with minimal code.
+              <br />
+              To install it you need to input the following commands into your terminal.
+              <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npm install react-router-dom
+              `}</pre>
+              <br />
+              From there you can now use the tags BrowserRouter, Switch, and Route in order to create multiple routes for your components. The Route tag 
+              renders the individual path for each page. The Switch tag allows for seamless switching between Routes and makes sure to load the first Route onLoad. 
+              The BrowserRouter tag allows for the Routes to be put together.
+              <br />
+              <strong>Important: You need to load your Route file inside your index.js file in order to create the routes.</strong>
+
+              FIX THIS SECTION CUZ IDK HOW TO DO INSTRUCTIONS
+            </p>
+    </Container>
   </div>
 )
 export default Setup
