@@ -5,8 +5,10 @@ import {
   Container,
   Menu,
   Icon,
-  Button
+  Button,
+  Modal
 } from 'semantic-ui-react'
+import Items from '../Items/Items';
 
 class NavBar extends Component {
 
@@ -49,14 +51,20 @@ class NavBar extends Component {
                         onClick={this.handleItemClick} />
             {Boolean(window.location.pathname === '/demonstration') && 
             <Menu.Item position='right'>
-              <Button basic color='yellow' id='shopping-cart'  animated='fade'>
+              <Modal trigger={<Button basic color='yellow' id='shopping-cart'  animated='fade'>
               <Button.Content hidden>
-                <Icon size='large' style={{marginTop: '-4px'}} name='in cart' />
+                <Icon size='large' style={{marginTop: '-5px'}} name='in cart' />
               </Button.Content>
               <Button.Content visible>
                 <Icon size='large' name='cart' />
               </Button.Content>
-              </Button>
+              </Button>}>
+              
+                <Modal.Header>Shopping Cart</Modal.Header>
+                <Modal.Content scrolling>
+                  <Items />
+                </Modal.Content>
+              </Modal>
             </Menu.Item>}
           </Container>
         </Menu>

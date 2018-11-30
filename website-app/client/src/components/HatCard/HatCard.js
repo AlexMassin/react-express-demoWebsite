@@ -4,18 +4,22 @@ import './HatCard.css';
 import {
   Image,
   Button,
-  Card
+  Card,
+  Popup,
+  ButtonContent
 } from 'semantic-ui-react'
 
 class HatCard extends Component {
 
 
-  constructor(props){
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-   }
+
   
-  state = {hovered: false};
+  state = {hovered: false, added: false};
+
+  onClickButton = () =>{
+    this.setState({added: true});
+  }
+
 
   onEnter = () => {
     this.setState({hovered: true});
@@ -25,16 +29,22 @@ class HatCard extends Component {
     this.setState({hovered: false});
   }
 
-  async function handleSubmit(data){
+  handleSubmit = (data) => {
     try {
-      let response = await fetch('/api/add', {
+      var request = new Request('http://localhost:5000/api/add');
+
+      fetch(request, {
         method: 'POST',
+        mode: 'cors',
         headers: {
           'Content-type': 'application/json',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Allow-Methods': 'POST',
         },
-        body: JSON.parse(data),
-      });
-      
+        body: JSON.stringify(data),
+      })
+      .then(console.log('test'))
     } catch(error){
       console.error(error);
     }
@@ -57,13 +67,20 @@ class HatCard extends Component {
             <Card.Description>{this.props.price}</Card.Description>
           </Card.Content>
           <Card.Content extra>
+
+         
               <Button 
               style={{ float: 'right' }} 
               onMouseEnter={this.onEnter} 
               onMouseLeave={this.onExit} 
               basic={!this.state.hovered} 
+              disabled={this.state.added}
               color='green'
-              onClick={this.handleSubmit({name, image, price})}>Add to Cart
+              onClick={() => {this.handleSubmit({name, image, price}); this.onClickButton()}}>
+              <ButtonContent>
+                  {this.state.added ? 'Added to Cart!' : 'Add to Cart.'}
+              </ButtonContent>
+              
               </Button>
           </Card.Content>
         </Card>

@@ -1,7 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var cors=require('cors');
 
 const app = express();
+app.use(cors({origin:true,credentials: true}));
+
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
@@ -13,7 +16,8 @@ app.get('/api/items', (req, res) => {
 
 
 app.post('/api/add', (req, res) => {
-    console.log(req.body) 
+    items.push(req.body);
+    console.log(items); 
 });
 
 const port = 5000;

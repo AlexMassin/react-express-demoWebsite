@@ -31,6 +31,7 @@ import hat_TML_NHL from "../../images/hat_TML_NHL.jpeg";
 import hat_EO_NHL from "../../images/hat_EO_NHL.jpeg";
 import hat_CAN1_NHL from "../../images/hat_CAN1_NHL.jpeg";
 import hat_CAN2_NHL from "../../images/hat_CAN2_NHL.jpeg";
+import Items from '../../components/Items/Items';
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
