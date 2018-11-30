@@ -384,11 +384,10 @@ description = "..."
 
 						<Grid.Row columns={2} textAlign="center">
 							<Grid.Column>
-								<Popup inverted trigger={this.Grid()} style={{ padding: '2em' }}>
-									<Popup.Header style={{ color: '#2284D0' }}>3 x 4 Grid</Popup.Header>
+								<Popup inverted trigger={this.Grid()} style={{ padding: '2em', opacity: '0.9' }}>
 									<Popup.Content>
 										<pre>
-											<code style={{ color: '#53FF54' }}>{this.gridCode}</code>
+											<code style={{ color: '#915EFF' }}>{this.gridCode}</code>
 										</pre>
 									</Popup.Content>
 								</Popup>
@@ -489,6 +488,7 @@ description = "..."
 												</p>
 
 												<Popup
+													style={{ opacity: '0.9' }}
 													inverted
 													trigger={
 														<Radio
@@ -505,7 +505,7 @@ description = "..."
 													<Popup.Content>
 														<pre>
 															<code
-																style={{ color: '#53FF54' }}
+																style={{ color: '#915EFF' }}
 															>{`<Accordion styled>`}</code>
 														</pre>
 													</Popup.Content>
@@ -514,6 +514,7 @@ description = "..."
 												<br />
 
 												<Popup
+													style={{ opacity: '0.9' }}
 													inverted
 													trigger={
 														<Radio
@@ -528,7 +529,7 @@ description = "..."
 												>
 													<Popup.Content>
 														<pre>
-															<code style={{ color: '#53FF54' }}>
+															<code style={{ color: '#915EFF' }}>
 																{'<Segment inverted>\n\t<Accordion inverted>'}
 															</code>
 														</pre>
@@ -586,35 +587,47 @@ description = "..."
 											'Standard Card',
 											'This is standard Card created with multiple tags rather than <Card> attributes.'
 										)}
-										style={{ padding: '2em' }}
+										style={{ padding: '2em', opacity: '0.9' }}
 									>
 										<Popup.Content>
 											<pre>
-												<code style={{ color: '#53FF54' }}>{this.cardCode}</code>
+												<code style={{ color: '#915EFF' }}>{this.cardCode}</code>
 											</pre>
 										</Popup.Content>
 									</Popup>
 
-									<Popup inverted trigger={this.linkCard(link_image)} style={{ padding: '2em' }}>
+									<Popup
+										inverted
+										trigger={this.linkCard(link_image)}
+										style={{ padding: '2em', opacity: '0.9' }}
+									>
 										<Popup.Content>
 											<pre>
-												<code style={{ color: '#53FF54' }}>{this.linkCode}</code>
+												<code style={{ color: '#915EFF' }}>{this.linkCode}</code>
 											</pre>
 										</Popup.Content>
 									</Popup>
 
-									<Popup inverted trigger={this.colorCard(color_image)} style={{ padding: '2em' }}>
+									<Popup
+										inverted
+										trigger={this.colorCard(color_image)}
+										style={{ padding: '2em', opacity: '0.9' }}
+									>
 										<Popup.Content>
 											<pre>
-												<code style={{ color: '#53FF54' }}>{this.colorCardCode}</code>
+												<code style={{ color: '#915EFF' }}>{this.colorCardCode}</code>
 											</pre>
 										</Popup.Content>
 									</Popup>
 
-									<Popup inverted trigger={this.contentCard()} style={{ padding: '2em' }}>
+									<Popup
+										inverted
+										trigger={this.contentCard()}
+										style={{ padding: '2em', opacity: '0.9' }}
+									>
 										<Popup.Content>
 											<pre>
-												<code style={{ color: '#53FF54' }}>{this.feedCardCode}</code>
+												<code style={{ color: '#915EFF' }}>{this.feedCardCode}</code>
 											</pre>
 										</Popup.Content>
 									</Popup>
@@ -661,12 +674,13 @@ description = "..."
 									trigger={
 										<Button color="blue" style={{ padding: '0px' }}>
 											<Popup
+												style={{ opacity: '0.9' }}
 												inverted
 												trigger={<div style={{ padding: '20px' }}>Standard Modal</div>}
 											>
 												<Popup.Content>
 													<pre>
-														<code style={{ color: '#53FF54' }}>
+														<code style={{ color: '#915EFF' }}>
 															{this.standardModalText}
 														</code>
 													</pre>
@@ -694,12 +708,13 @@ description = "..."
 									trigger={
 										<Button color="blue" style={{ padding: '0px' }}>
 											<Popup
+												style={{ opacity: '0.9' }}
 												inverted
 												trigger={<div style={{ padding: '20px' }}>Basic Modal</div>}
 											>
 												<Popup.Content>
 													<pre>
-														<code style={{ color: '#53FF54' }}>{this.basicModalText}</code>
+														<code style={{ color: '#915EFF' }}>{this.basicModalText}</code>
 													</pre>
 												</Popup.Content>
 											</Popup>
@@ -727,12 +742,13 @@ description = "..."
 									trigger={
 										<Button color="blue" style={{ padding: '0px' }}>
 											<Popup
+												style={{ opacity: '0.9' }}
 												inverted
 												trigger={<div style={{ padding: '20px' }}>Scrolling Modal</div>}
 											>
 												<Popup.Content>
 													<pre>
-														<code style={{ color: '#53FF54' }}>
+														<code style={{ color: '#915EFF' }}>
 															{this.scrollingModalText}
 														</code>
 													</pre>
@@ -770,11 +786,15 @@ description = "..."
 									size="mini"
 									trigger={
 										<Button color="blue" style={{ padding: '0px' }}>
-											<Popup inverted trigger={<div style={{ padding: '20px' }}>Mini Modal</div>}>
+											<Popup
+												style={{ opacity: '0.9' }}
+												inverted
+												trigger={<div style={{ padding: '20px' }}>Mini Modal</div>}
+											>
 												<Popup.Content>
 													<pre>
 														<code
-															style={{ color: '#53FF54' }}
+															style={{ color: '#915EFF' }}
 														>{`<Modal size='mini' trigger={}>\n\t...\n</Modal>`}</code>
 													</pre>
 												</Popup.Content>
@@ -796,13 +816,14 @@ description = "..."
 									trigger={
 										<Button color="blue" style={{ padding: '0px' }}>
 											<Popup
+												style={{ opacity: '0.9' }}
 												inverted
 												trigger={<div style={{ padding: '20px' }}>Small Modal</div>}
 											>
 												<Popup.Content>
 													<pre>
 														<code
-															style={{ color: '#53FF54' }}
+															style={{ color: '#915EFF' }}
 														>{`<Modal size='small' trigger={}>\n\t...\n</Modal>`}</code>
 													</pre>
 												</Popup.Content>
@@ -824,13 +845,14 @@ description = "..."
 									trigger={
 										<Button color="blue" style={{ padding: '0px' }}>
 											<Popup
+												style={{ opacity: '0.9' }}
 												inverted
 												trigger={<div style={{ padding: '20px' }}>Fullscreen Modal</div>}
 											>
 												<Popup.Content>
 													<pre>
 														<code
-															style={{ color: '#53FF54' }}
+															style={{ color: '#915EFF' }}
 														>{`<Modal size='fullscreen' trigger={}>\n\t...\n</Modal>`}</code>
 													</pre>
 												</Popup.Content>
