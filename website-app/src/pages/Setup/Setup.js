@@ -16,6 +16,7 @@ import {
   Grid,
   Header,
   Transition,
+  Message,
   Icon,
   Image,
   List,
@@ -40,7 +41,8 @@ const Setup = () => (
               We recommend setting up a VPS as a permanent, long-term solution for a back-end server.
               There are many options to begin experimenting with such as Google Cloud, Amazon's AWS, and Digital Ocean.
               We set up our website to be hosted on Digital Ocean as it is easy to set up, requires very little validation, and
-              offers many different preset frameworks that cater to specific needs, such as Node.
+              offers many different preset packages that cater to specific needs, such as Node. Database communication applications
+              such as ExpressJS and database management systems such as MySQL need to be installed within the server.
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={ 6 }>
@@ -66,16 +68,6 @@ const Setup = () => (
         Setting Up Digital Ocean
     </Divider>
       <Container text>
-        <Header as='h3' style={{ fontSize: '2em' }}>
-          Create a Digital Ocean Account
-        </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          Sign-up for an account with digital ocean. For new accounts, you will receive a $100 credit for 60 days to gauge your experience. 
-          Like other VPS services, you will need to provide a valid credit card and email address to complete account validation for 
-          security purposes. You will not be charged until your trial is over and if you do not want to continue, you can simply deactive
-          your account.
-        </p>
-        <br />
         <Header as='h3' style={{ fontSize: '2em' }}>
           Create a New Project
         </Header>
@@ -164,6 +156,28 @@ const Setup = () => (
           `}</pre>
         </p>
       </Container>
+      <Container text style={{ margin: '2em 0em 4em 0em' }}>
+        <Header as='h3' style={{ fontSize: '2em' }}>
+          Install ExpressJS and MySQL
+        </Header>
+        <p>
+          ExpressJS is a standard server framework that allows for web applications to commuicate to a database system such as MySQL.
+          The installation can be done simply through an npm install command at the root folder of the web application.
+          <br /><br />
+          You need to execute
+          <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npm install express --save
+          `}</pre>
+          <br />
+          MySQL is a popular database management system that allows for data to be stored in tables and retrieved with query requests.
+          The installation is similar to ExpressJS.
+          <br /><br />
+          You need to execute
+          <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npm install mysql
+          `}</pre>
+        </p>
+      </Container>
       <Segment inverted style={{ padding: '5em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
@@ -174,7 +188,8 @@ const Setup = () => (
             <p style={{ fontSize: '1.33em' }}>
               Once a back-end server is set up, a React.JS App must be created. We recommend setting up GitHub for better file management and version handling.
               Once the App is created, the files may be distributed among your team and edited outside of the server with a text editor of their choice in an
-              environement they are comfortable in.
+              environement they are comfortable in. The UI design will depend on the official Semantic-UI implementation for React. React alone is a great 
+              framework for single page applications. However, adding more pages to your web application with React requires routing.
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={ 6 } >
@@ -221,6 +236,51 @@ const Setup = () => (
         </p>
     </Container>
     <Container text style={{ margin: '2em 0em 4em 0em' }}>
+            <Header as='h3' style={{ fontSize: '2em' }}>
+              Installing Semantic UI React
+            </Header>
+            <p>
+              Node has a large library of modules and extensions that allow for certain key features to be added to your application.
+              In our application, Semantic UI and other extensions were installed to create a visually appealing website. To install Semantic UI React,
+              we will be using npm again.
+              <br /><br />
+              You need to execute
+              <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npm install semantic-ui-react
+  npm install semantic-ui-css
+              `}</pre>
+              In order to implement the Semantic-UI CSS designs, the following import statement must be included within the main styles.css files
+              <pre style={{ color: '#CF9176', backgroundColor: '#1E1E1E' }}>{`
+  `}
+              <p style={{ color: '#C684C1', display: 'inline-block' }} >import</p> {`'semantic-ui-css/semantic.min.css';
+              `}</pre>
+              Note: Make sure you refer to <a href="https://react.semantic-ui.com/" target="_blank">Semantic UI React</a> and <strong>NOT</strong> <a href="https://semantic-ui.com/" target="_blank">Semantic UI </a>
+              since they offer different documentation.
+            </p>
+    </Container>
+        <Container text style={{ margin: '2em 0em 4em 0em' }}>
+            <Header as='h3' style={{ fontSize: '2em' }}>
+              Routing with ReactJS
+            </Header>
+            <p>
+              In order to have a multiple page application, a module that allows for routes to be created must be installed. There are two ways this can be done within this application.
+              You can either install React Router or, you can use NodeJS to route the pages within the back-end. For simplicity, the React Router module allowed for optimal routing with minimal code.
+              The installation is done through npm as well.
+              <br /><br />
+              You need to execute
+              <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
+  npm install react-router-dom
+              `}</pre>
+              <br />
+              Now it is possible to use the tags BrowserRouter, Switch, and Route in order to create multiple routes for your components. The Route tag renders the individual paths for each page.
+              The Switch tag allows for seamless switching between Routes and makes sure to load the first Route onLoad. Lastly, the BrowserRouter tag allows for the Routes to be put together.
+              <br /><br />
+              <strong>Important: You need to load your Route file inside your index.js file in order to create the routes.</strong>
+              <br /><br />
+              To learn more about how to setup and use the React Router, <a href="https://reacttraining.com/react-router/web/guides/quick-start" target="_blank">click here.</a>
+            </p>
+    </Container>
+    <Container text style={{ margin: '2em 0em 4em 0em' }}>
         <Header as='h3' style={{ fontSize: '2em' }}>
           Running a React App
         </Header>
@@ -235,37 +295,13 @@ const Setup = () => (
           Once the program is running without errors, your website will be publicly visible on browsers by simply typing in your VPS IP into the address bar with the
           port 3000.
           <br /><br />
-          You can visit your site by typing
+          You and others can visit your website by typing
           <pre style={{ color: '#000000', backgroundColor: '#E8E8E8' }}>{`
   SERVER_IP_ADDRESS:3000
           `}</pre>
-          When the web app is running as intended, you can start hosting with an optimized production build. You can create the optimized build with a single command.
-          <br /><br />
-          You need to execute
-          <pre style={{ color: '#2BEF00', backgroundColor: '#000000' }}>{`
-  npm run build
-  npm install -g serve
-  serve -s build
-          `}</pre>
-          Once the build is served, your website will be publicly visible on browsers by simply typing in your VPS IP into the address bar with the
-          port 5000.
-          <br /><br />
-          You can visit your site by typing
-          <pre style={{ color: '#000000', backgroundColor: '#E8E8E8' }}>{`
-  SERVER_IP_ADDRESS:5000
-          `}</pre>
+          To appear more presentable such as <em>www.mysite.com</em>, you may purchase a domain and have it redirect to the specific web address above.
         </p>
     </Container>
-    <Divider
-          as='h3'
-          className='header'
-          horizontal
-          style={{ margin: '2em 0em', textTransform: 'uppercase' }}
-        >
-        Domain Redirection
-    </Divider>
-    [[CONTINUE FROM HERE]]
-   
   </div>
 )
 export default Setup

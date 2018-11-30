@@ -24,7 +24,7 @@ class HatCard extends Component {
     return (
       <div style={{ padding: '0.8em' }}>
         <Card>
-          <Card.Content style={{ height: '23em', maxHeight: '26em' }}>
+          <Card.Content style={{ height: '23em' }}>
             <Image src={this.props.imgsrc}/>
             <Card.Header>{this.props.name}</Card.Header>
             <Card.Meta>{this.props.sub}</Card.Meta>
