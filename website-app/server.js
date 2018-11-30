@@ -2,12 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-
-var jsonParser = bodyParser.json()
- 
-// create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
- 
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 const items = [];
 
@@ -16,13 +12,8 @@ app.get('/api/items', (req, res) => {
 });
 
 
-app.post('/api/add', jsonParser, (req, res) => {
-    console.log(req.body);
-    var name= req.body.name;
-    var imageURL=req.body.imageURL;
-    var price=req.body.price;
-    console.log("Name = "+name+", imageURL is "+imageURL + ", and price is " + price);
-    
+app.post('/api/add', (req, res) => {
+    console.log(req.body) 
 });
 
 const port = 5000;

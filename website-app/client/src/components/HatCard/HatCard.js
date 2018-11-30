@@ -4,12 +4,16 @@ import './HatCard.css';
 import {
   Image,
   Button,
-  Form,
   Card
 } from 'semantic-ui-react'
 
 class HatCard extends Component {
 
+
+  constructor(props){
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+   }
   
   state = {hovered: false};
 
@@ -21,8 +25,28 @@ class HatCard extends Component {
     this.setState({hovered: false});
   }
 
+  async function handleSubmit(data){
+    try {
+      let response = await fetch('/api/add', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.parse(data),
+      });
+      
+    } catch(error){
+      console.error(error);
+    }
+
+        
+   };
 
   render() {
+    const name = this.props.name;
+    const image = this.props.imgsrc;
+    const price = this.props.price;
+
     return (
       <div style={{ padding: '0.8em' }}>
         <Card>
@@ -33,19 +57,14 @@ class HatCard extends Component {
             <Card.Description>{this.props.price}</Card.Description>
           </Card.Content>
           <Card.Content extra>
-              <Form action='api/add' method='post'>
-              <Form.Input name='name' value={this.props.name} />
-
-              <Button type='submit'
+              <Button 
               style={{ float: 'right' }} 
               onMouseEnter={this.onEnter} 
               onMouseLeave={this.onExit} 
               basic={!this.state.hovered} 
               color='green'
-               >Add to Cart
+              onClick={this.handleSubmit({name, image, price})}>Add to Cart
               </Button>
-              </Form>
-             
           </Card.Content>
         </Card>
     </div>
