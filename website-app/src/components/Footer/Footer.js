@@ -22,8 +22,11 @@ class Footer extends Component {
     return (
       <div style={{margin: '14px'}}>
       <center>
-            <Icon size='large' name='hand point down outline' />
+            <Icon flipped="horizonally" size='large' name='hand point down outline' /> 
             This is the bottom of the page.
+            <Icon size='large' name='hand point down outline' />
+
+
       </center>
     </div>
     );
