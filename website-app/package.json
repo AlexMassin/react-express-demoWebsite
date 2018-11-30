@@ -1,37 +1,24 @@
 {
-  "name": "website-app",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://alexmassin.github.io/cps530-website",
-  "dependencies": {
-    "express": "^4.16.4",
-    "fusioncharts": "^3.13.2-sr.1",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-fusioncharts": "^2.0.5",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.0.5",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.82.5"
-  },
+  "name": "reactexpress",
+  "version": "1.0.0",
+  "description": "Server Package Json",
+  "main": "server.js",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "client-install": "cd client && npm install",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "author": "Alexander Massin",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "connect": "^3.6.6",
+    "express": "^4.16.4"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "nodemon": "^1.18.7"
   }
 }
