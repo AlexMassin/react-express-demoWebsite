@@ -8,10 +8,14 @@ app.use(cors({origin:true,credentials: true}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-const items = [];
+var items = [];
 
 app.get('/api/items', (req, res) => {
     res.json(items);
+});
+
+app.get('/api/reset', (req, res) => {
+	items = [];
 });
 
 

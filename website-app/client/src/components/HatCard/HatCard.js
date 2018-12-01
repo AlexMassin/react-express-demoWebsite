@@ -17,7 +17,7 @@ class HatCard extends Component {
   state = {hovered: false, added: false};
 
   onClickButton = () =>{
-    this.setState({added: true});
+    this.setState({added: true, hovered: true});
   }
 
 
@@ -31,7 +31,7 @@ class HatCard extends Component {
 
   handleSubmit = (data) => {
     try {
-      var request = new Request('http://localhost:5000/api/add');
+      var request = new Request('http://165.227.36.115:5000/api/add');
 
       fetch(request, {
         method: 'POST',
@@ -72,11 +72,11 @@ class HatCard extends Component {
               <Button 
               style={{ float: 'right' }} 
               onMouseEnter={this.onEnter} 
-              onMouseLeave={this.onExit} 
+              onMouseLeave={this.onExit}
               basic={!this.state.hovered} 
               disabled={this.state.added}
               color='green'
-              onClick={() => {this.handleSubmit({name, image, price}); this.onClickButton()}}>
+              onClick={() => {this.onClickButton(); this.handleSubmit({name, image, price})}}>
               <ButtonContent>
                   {this.state.added ? 'Added to Cart!' : 'Add to Cart.'}
               </ButtonContent>

@@ -296,6 +296,7 @@ render() {
             </Table.Body>
           </Table>
           </center>
+	 <Popup trigger={<Label color='blue'>Citation</Label>} content="The Good and the Bad of ReactJS and React Native. (n.d.). Retrieved from https://www.altexsoft.com/blog/engineering/the-good-and-the-bad-of-reactjs-and-react-native/" />
         </Grid.Column>
         <Grid.Column>
         <center>
@@ -330,6 +331,7 @@ render() {
             </Table.Body>
           </Table>
           </center>
+	 <Popup trigger={<Label color='green'>Citation</Label>} content='Volodymyr, T. (2018, March 22). Express.js Mobile App Development: Pros and cons of Node.js framework. Retrieved from https://apiko.com/blog/express-mobile-app-development/' />
         </Grid.Column>
       </Grid.Row>
     </Grid>

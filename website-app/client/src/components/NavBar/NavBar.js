@@ -15,8 +15,15 @@ class NavBar extends Component {
 
   handleItemClick = (e, { name }) => {
     window.location.href = '/' + name;
+    fetch('api/reset');
 
   }
+
+  onModalClick = () => {
+	fetch('api/reset');
+	window.location.reload();
+  }
+
   render() {
     const { children } = this.props;
     
@@ -64,6 +71,15 @@ class NavBar extends Component {
                 <Modal.Content scrolling>
                   <Items />
                 </Modal.Content>
+		     <Modal.Actions>
+		                <Button
+		                  onClick={this.onModalClick}
+		                  positive
+		                  labelPosition='right'
+		                  icon='checkmark'
+		                  content='Checkout'
+		                />
+		              </Modal.Actions>
               </Modal>
             </Menu.Item>}
           </Container>
