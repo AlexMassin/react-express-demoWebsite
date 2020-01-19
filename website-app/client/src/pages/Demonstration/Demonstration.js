@@ -40,17 +40,13 @@ import Items from '../../components/Items/Items';
 
 class Demonstration extends Component {
 
-  state={visible:false}
+state={visible: false}
 
-  toggleVisibility = () => this.setState({ visible: !this.state.visible })
-
+toggleVisibility = () => this.setState({ visible: !this.state.visible })
 
 componentDidMount = () => {
-    setTimeout(
-      this.setState({visible:true}),
-      3000
-    )
-}
+  this.setState({visible: true})
+} 
 
 render() {
   const {visible} = this.state
@@ -73,84 +69,84 @@ render() {
     </Segment>
 
     <Card.Group itemsPerRow={4} centered style={ {margin: '1em 0em' }}>
-      <HatCard 
+      <HatCard
         imgsrc={hat_TR_NBA} 
         name='Toronto Raptor New Era NBA City Series 2.0'
         sub='59FIFTY Cap'
         price='$48.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_MH_NBA}
         name='Miami Heat NBA City Series 2.0'
         sub='59FIFTY Cap'
         price='$48.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_CB_NBA}
         name='Chicago Bulls NBA City Series 2.0'
         sub='59FIFTY Cap'
         price='$48.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_LAL_NBA}
         name='Los Angeles Lakers NBA City Series 2.0'
         sub='59FIFTY Cap'
         price='$48.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_BJ_MLB} 
         name='Toronto Blue Jays New Era MLB Authenic Collection'
         sub='59FIFTY Cap'
         price='$42.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_NYY_MLB} 
         name='New York Yankees New Era MLB Authenic Collection'
         sub='59FIFTY Cap'
         price='$42.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_DT_MLB} 
         name='Detroit Tigers New Era MLB Authenic Collection'
         sub='59FIFTY Cap'
         price='$42.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_BRS_MLB} 
         name='Boston Red Sox New Era MLB Authenic Collection'
         sub='59FIFTY Cap'
         price='$42.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_TML_NHL} 
         name='Toronto Maple Leafs NHL Rinkside'
         sub='Flex Cap'
         price='$40.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_EO_NHL} 
         name='Edmonton Oilers NHL Throwback'
         sub='Snapback Cap'
         price='$39.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_CAN1_NHL} 
         name='Canada Hockey Nike IIHF Dri-Fit Wool'
         sub='Adjustable Cap'
         price='$29.99'
         />
 
-        <HatCard 
+        <HatCard
         imgsrc={hat_CAN2_NHL} 
         name='Canada Hockey Nike Olympics Dri-Fit Wool'
         sub='Classic Cap'

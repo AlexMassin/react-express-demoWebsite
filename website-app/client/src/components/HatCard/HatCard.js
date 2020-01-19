@@ -10,16 +10,28 @@ import {
 } from 'semantic-ui-react'
 
 class HatCard extends Component {
-
-
-
   
   state = {hovered: false, added: false};
+
+  /**
+   * Homemade global event propagation
+   */
+  disableComponentEvt = () => {
+    if (this.state.added || this.state.hovered)
+      this.setState({hovered: false, added: false})
+  }
+
+componentDidMount = () => {
+  window.addEventListener('resetDemo', this.disableComponentEvt);
+} 
+
+componentWillUnmount() {
+  window.removeEventListener('resetDemo', this.disableComponentEvt)
+}
 
   onClickButton = () =>{
     this.setState({added: true, hovered: true});
   }
-
 
   onEnter = () => {
     this.setState({hovered: true});
@@ -31,7 +43,7 @@ class HatCard extends Component {
 
   handleSubmit = (data) => {
     try {
-      var request = new Request('http://165.227.36.115:5000/api/add');
+      var request = new Request('http://' + window.location.hostname + ':5000/api/add');
 
       fetch(request, {
         method: 'POST',
@@ -44,7 +56,7 @@ class HatCard extends Component {
         },
         body: JSON.stringify(data),
       })
-      .then(console.log('test'))
+      .then(console.log('Item added'))
     } catch(error){
       console.error(error);
     }
