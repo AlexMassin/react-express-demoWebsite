@@ -18,8 +18,8 @@ class Items extends Component {
       }
   }
 
-  componentDidMount = () =>{
-      fetch('api/items')
+  componentDidMount = () => {
+      fetch('http://' + window.location.hostname + ':5000/api/items')
         .then(res => res.json())
         .then(items => this.setState({items}, () => console.log('Items Fetched: ', items)));
   }
@@ -29,8 +29,8 @@ class Items extends Component {
       <div>
           <Feed>
               <Segment style={{fontSize: '16px'}}>
-              {this.state.items.map(item =>
-                 <Feed.Event style={{display: 'inline'}}>
+              {this.state.items.map((item, id) =>
+                 <Feed.Event style={{display: 'inline'}} key={id}>
                    <Feed.Label style={{height: '150px', width: '150px', display: 'inline-block',}}><Image id='item' avatar size='large' src={item.image} /> </Feed.Label>
                    <Feed.Label style={{    display: 'inline-block', padding: '24px', fontSize: '22px'}}>
                      <Feed.Date  style={{fontSize: '16px'}} content={item.price} />

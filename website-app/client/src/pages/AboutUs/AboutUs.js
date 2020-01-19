@@ -65,7 +65,7 @@ class AboutUs extends Component {
 									<Card.Description>
 										Alex was responsible for the Setup page, Demo page, and the current page you're
 										reading right now. He gathered most of the image assets used, created the card
-										component, and helped set up the server.
+										component, and set up the server. He also refactored the code for a dist build.
 									</Card.Description>
 								</Card.Content>
 							</Card>

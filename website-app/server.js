@@ -15,13 +15,15 @@ app.get('/api/items', (req, res) => {
 });
 
 app.get('/api/reset', (req, res) => {
-	items = [];
+    items = [];
+    res.json({"message": "cart emptied"})
 });
 
 
 app.post('/api/add', (req, res) => {
     items.push(req.body);
     console.log(items); 
+    res.json({"message": "added item"})
 });
 
 const port = 5000;
